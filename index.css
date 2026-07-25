@@ -431,6 +431,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 }
 .firm-card:hover { background: #fef9f9; border-color: rgba(209,0,0,0.2); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
 .firm-card.hidden { display: none; }
+.firms-grid.hidden { display: none; }
 
 .firm-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
 .firm-logo-box {

@@ -384,7 +384,7 @@ function initMapLibre() {
   if (!container || typeof maplibregl === 'undefined') return;
 
   if (!maplibreInstance) {
-    maplibreInstance = new maplibregl.Map({
+     maplibreInstance = new maplibregl.Map({
       container: 'maplibreCanvas',
       style: 'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
       center: [15, 25],
@@ -393,7 +393,9 @@ function initMapLibre() {
       renderWorldCopies: false,
       dragRotate: false,
       pitchWithRotate: false,
-      touchPitch: false
+      touchPitch: false,
+      scrollZoom: { around: 'center' },
+      touchZoomRotate: { around: 'center' }
     });
 
     maplibreInstance.touchZoomRotate.disableRotation();

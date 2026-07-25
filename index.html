@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPG AI Hub | AI for CPG Vietnam Staff</title>
+  <meta name="description" content="Your simple guide to AI at CPG Vietnam. Watch short videos, learn what AI can do, and share your ideas with leadership.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css?t=100013">
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <!-- ── NAVBAR ── -->
+  <header class="navbar" id="navbar">
+    <div class="nav-wrap">
+
+      <a href="#home" class="nav-brand">
+        <img src="cpg_international_logo.jpg" alt="CPG International" class="nav-logo-img">
+        <div>
+          <span class="nav-site-name">CPG AI <span class="c-gold">Hub</span></span>
+          <span class="nav-site-sub">VIETNAM DIGITAL OFFICE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+
+        <!-- Learn dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dd-trigger">
+            Learn <i class="fa-solid fa-chevron-down fa-xs"></i>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="#what-is-ai" class="nav-dd-item">
+              <i class="fa-solid fa-robot"></i>
+              <div><strong>What is AI?</strong><span>Simple 5-min explainer</span></div>
+            </a>
+            <a href="#quick-learns" class="nav-dd-item">
+              <i class="fa-brands fa-youtube"></i>
+              <div><strong>Quick Videos</strong><span>Short clips, big ideas</span></div>
+            </a>
+            <a href="#ai-tools" class="nav-dd-item">
+              <i class="fa-solid fa-toolbox"></i>
+              <div><strong>AI Tools</strong><span>What CPG is using</span></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Explore dropdown -->
+        <div class="nav-dropdown">
+          <button class="nav-link nav-dd-trigger">
+            Explore <i class="fa-solid fa-chevron-down fa-xs"></i>
+          </button>
+          <div class="nav-dd-menu">
+            <a href="#global-firms" class="nav-dd-item">
+              <i class="fa-solid fa-building-columns"></i>
+              <div><strong>Global Leaders</strong><span>Top firms using AI</span></div>
+            </a>
+            <a href="#aios" class="nav-dd-item">
+              <i class="fa-solid fa-layer-group"></i>
+              <div><strong>How AI Agents Work</strong><span>The 5-layer model</span></div>
+            </a>
+            <a href="#timeline" class="nav-dd-item">
+              <i class="fa-solid fa-timeline"></i>
+              <div><strong>AI History</strong><span>70 years in 5 slides</span></div>
+            </a>
+          </div>
+        </div>
+
+        <a href="#share-ideas" class="nav-link c-gold">Share Your Idea</a>
+        <a href="#dashboard" class="nav-link">Manager View</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="btn-ghost" id="openSlidesBtn"><i class="fa-solid fa-presentation-screen"></i> WK Slides</button>
+        <a href="#share-ideas" class="btn-primary-sm"><i class="fa-solid fa-lightbulb"></i> Submit Idea</a>
+      </div>
+
+      <button class="mobile-toggle" id="mobileToggle"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-badge"><span class="dot"></span> CPG VIETNAM AI INITIATIVE 2026</div>
+
+      <h1 class="hero-h1">
+        AI isn't replacing you.<br>
+        <span class="grad-text">It's your new superpower.</span>
+      </h1>
+
+      <p class="hero-sub">
+        A simple guide for CPG Vietnam staff to understand AI, see how it helps your daily work, and share your own ideas with leadership.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#quick-learns" class="btn-primary"><i class="fa-solid fa-play"></i> Watch 1-min videos</a>
+        <a href="#what-is-ai" class="btn-ghost-lg"><i class="fa-solid fa-book-open"></i> Start learning</a>
+      </div>
+
+      <div class="hero-stats-row">
+        <div class="hstat"><span class="hstat-v">< 5 min</span><span class="hstat-l">Per video</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-v">4 topics</span><span class="hstat-l">Easy categories</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-v">1 form</span><span class="hstat-l">Share your ideas</span></div>
+        <div class="hstat-div"></div>
+        <div class="hstat"><span class="hstat-v">100%</span><span class="hstat-l">For CPG staff</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT IS AI? ── -->
+  <section class="section" id="what-is-ai">
+    <div class="container">
+      <div class="section-label">LEARN THE BASICS</div>
+      <div class="section-head-row">
+        <div>
+          <h2>What is AI, really?</h2>
+          <p class="section-sub">No tech jargon. Just plain language.</p>
+        </div>
+      </div>
+
+      <div class="cards-3">
+        <div class="info-card">
+          <div class="card-icon" style="background: rgba(209,0,0,0.12); color: #D10000;">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h3>AI is a very smart assistant</h3>
+          <p>Think of it like a colleague who has read every book, every report, and every manual — and can answer your questions instantly. You still make the decisions; it helps you get there faster.</p>
+          <span class="card-tag">Everyday</span>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon" style="background: rgba(244,169,0,0.12); color: #f4a900;">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <h3>AI helps you do your job better</h3>
+          <p>In architecture and design, AI can generate concept sketches, check drawings for errors, write meeting summaries, and compare documents — so you spend time on creative thinking, not repetitive tasks.</p>
+          <span class="card-tag">Design & Work</span>
+        </div>
+
+        <div class="info-card">
+          <div class="card-icon" style="background: rgba(209,0,0,0.08); color: #D10000;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>AI has rules at CPG</h3>
+          <p>CPG follows strict AI usage guidelines approved by leadership. Never share confidential client data with public AI tools. Ask your manager if unsure about what's allowed.</p>
+          <span class="card-tag">Security</span>
+        </div>
+      </div>
+
+      <!-- The pen & writing metaphor -->
+      <div class="metaphor-card">
+        <div class="metaphor-icon"><i class="fa-solid fa-pencil"></i></div>
+        <div class="metaphor-body">
+          <div class="section-label" style="text-align: left; margin-bottom: 6px;">WK's PHILOSOPHY</div>
+          <h3>"Like learning to write — you need something to say first."</h3>
+          <p>Teaching a child to hold a pen only works if they have something they want to write. <strong>AI tools are the pen.</strong> Your domain expertise, your problems, your ideas — that's the story. Start by identifying what slows you down every day. Then we find the right AI tool together.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUICK LEARNS (Video Shorts Section) ── -->
+  <section class="section alt-bg" id="quick-learns">
+    <div class="container">
+      <div class="section-label">QUICK LEARNS</div>
+      <div class="section-head-row">
+        <div>
+          <h2>Watch. Learn. Done.</h2>
+          <p class="section-sub"><em>"10 minutes learning AI today saves you hours every week."</em> Pick a topic below to start.</p>
+        </div>
+        <div class="video-filter-bar">
+          <button class="vf-btn active" data-vcat="all">All</button>
+          <button class="vf-btn" data-vcat="basics">AI Basics</button>
+          <button class="vf-btn" data-vcat="tools">AI Tools</button>
+          <button class="vf-btn" data-vcat="design">Design & Architecture</button>
+          <button class="vf-btn" data-vcat="workplace">Work & Productivity</button>
+        </div>
+      </div>
+
+      <div class="video-grid" id="videoGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="video-cta-note">
+        <i class="fa-solid fa-circle-info"></i>
+        These are curated from public YouTube channels. None of your viewing data is tracked or shared.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI TOOLS MATRIX ── -->
+  <section class="section" id="ai-tools">
+    <div class="container">
+      <div class="section-label">TOOLS APPROVED FOR CPG</div>
+      <div class="section-head-row">
+        <div>
+          <h2>Which AI tool should I use?</h2>
+          <p class="section-sub">A simple guide based on your role and task type. Always follow CPG data security rules.</p>
+        </div>
+      </div>
+
+      <div class="tool-table-wrap">
+        <table class="tool-table">
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Recommended Tool</th>
+              <th>Who can use</th>
+              <th>Data Safety Level</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><i class="fa-solid fa-file-lines"></i> Writing emails, reports, summaries</td>
+              <td><span class="tool-badge ms">Microsoft Copilot</span></td>
+              <td>All staff</td>
+              <td><span class="safety safe">Internal OK</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-magnifying-glass"></i> Research & general questions</td>
+              <td><span class="tool-badge oai">ChatGPT</span></td>
+              <td>All staff</td>
+              <td><span class="safety caution">No client data</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-image"></i> Concept renders & mood boards</td>
+              <td><span class="tool-badge mid">Midjourney / Veras</span></td>
+              <td>Architects, Designers</td>
+              <td><span class="safety caution">Public images only</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-cube"></i> BIM model checking</td>
+              <td><span class="tool-badge aut">Autodesk AI</span></td>
+              <td>Technical team</td>
+              <td><span class="safety safe">Secure sandbox</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-code"></i> Scripting & automation</td>
+              <td><span class="tool-badge ant">Claude / Copilot</span></td>
+              <td>Advanced users</td>
+              <td><span class="safety safe">Internal OK</span></td>
+            </tr>
+            <tr>
+              <td><i class="fa-solid fa-chart-bar"></i> Data analysis & dashboards</td>
+              <td><span class="tool-badge ms">Excel Copilot</span></td>
+              <td>Managers, QS</td>
+              <td><span class="safety safe">Internal OK</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tool-note">
+        <i class="fa-solid fa-triangle-exclamation" style="color:#f4a900;"></i>
+        <span><strong>Important:</strong> Never paste confidential project data, client names, or financial figures into public AI tools like ChatGPT or Midjourney. Use Microsoft Copilot (connected to your O365 account) for internal data — it's secured by CPG's IT policies.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GLOBAL FIRMS ── -->
+  <section class="section alt-bg" id="global-firms">
+    <div class="container">
+      <div class="section-label">SEE IT IN ACTION</div>
+      <div class="section-head-row">
+        <div>
+          <h2>Leading firms already use AI</h2>
+          <p class="section-sub">These global AEC companies are getting results. Here's what they're doing — and what CPG can learn.</p>
+        </div>
+        <div class="video-filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="architecture">Architecture</button>
+          <button class="filter-btn" data-filter="urban">Urban Design</button>
+          <button class="filter-btn" data-filter="landscape">Landscape</button>
+          <button class="filter-btn" data-filter="engineering">Engineering</button>
+          <button class="filter-btn btn-map-tag" data-filter="map"><i class="fa-solid fa-earth-americas"></i> Global Map</button>
+        </div>
+      </div>
+      <div class="firms-grid" id="firmsGrid"></div>
+
+      <!-- Interactive Global Map Container (MapLibre GL JS) -->
+      <div class="firms-map-wrap hidden" id="firmsMapWrap">
+        <div class="world-map-box">
+          <!-- MapLibre Map Container -->
+          <div id="maplibreCanvas" style="width: 100%; height: 100%;"></div>
+
+          <!-- Map Legend (Reference Image 5 Inspired) -->
+          <div class="map-legend">
+            <div class="mleg-title"><i class="fa-solid fa-map-location-dot"></i> AEC AI Global Classification</div>
+            <div class="mleg-item"><span class="leg-dot red"></span> Generative & Parametric AI (ZHA, MAD)</div>
+            <div class="mleg-item"><span class="leg-dot blue"></span> Environmental Sim & BIM AI (F+P, Arup)</div>
+            <div class="mleg-item"><span class="leg-dot green"></span> Spatial & Workplace AI (Gensler, NBBJ)</div>
+            <div class="mleg-item"><span class="leg-dot gold"></span> CPG Regional AI Pilot Hub (SG / VN)</div>
+          </div>
+
+          <!-- Active Map Card Popup -->
+          <div class="map-info-popup" id="mapInfoPopup">
+            <div class="mip-name" id="mipName">CPG International</div>
+            <div class="mip-loc" id="mipLoc"><i class="fa-solid fa-location-dot fa-xs"></i> Singapore HQ & Vietnam Office</div>
+            <p class="mip-usecase" id="mipUsecase">Regional AI pilot initiative integrating generative AI for architectural form-finding, BOQ specification parsing, and sustainable master-planning across Asia-Pacific.</p>
+            <div class="mip-impact" id="mipImpact"><i class="fa-solid fa-arrow-trend-up"></i> Active Regional Digital Office Pilot</div>
+            <div class="mip-source" id="mipSource">Source: CPG Corporation Digital Transformation Plan 2026</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW AI AGENTS WORK (simplified AIOS) ── -->
+  <section class="section" id="aios">
+    <div class="container">
+      <div class="section-label">HOW AI AGENTS WORK</div>
+      <div class="section-head-row">
+        <div>
+          <h2>AI agents are built in layers</h2>
+          <p class="section-sub">Like floors in a building — fixed core at the bottom, flexible tools at the top. Click any layer to learn what it does.</p>
+        </div>
+      </div>
+
+      <div class="aios-wrap">
+        <!-- Left: Gradient circle diagram -->
+        <div class="circle-diagram" id="circleDiagram">
+          <!-- Gradient rings, outermost first -->
+          <div class="cring cr5" data-layer="5"></div>
+          <div class="cring cr4" data-layer="4"></div>
+          <div class="cring cr3" data-layer="3"></div>
+          <div class="cring cr2" data-layer="2"></div>
+          <div class="cring cr1" data-layer="1"></div>
+
+          <!-- Vertical guide line -->
+          <div class="c-guide-line"></div>
+
+          <!-- Labels -->
+          <div class="clabel cl5" data-layer="5"><span class="cdot"></span><span class="clabel-text"><strong>5</strong> External Tools</span></div>
+          <div class="clabel cl4" data-layer="4"><span class="cdot"></span><span class="clabel-text"><strong>4</strong> AI Agents</span></div>
+          <div class="clabel cl3" data-layer="3"><span class="cdot"></span><span class="clabel-text"><strong>3</strong> Skills</span></div>
+          <div class="clabel cl2" data-layer="2"><span class="cdot"></span><span class="clabel-text"><strong>2</strong> Rules</span></div>
+          <div class="clabel cl1" data-layer="1"><span class="clabel-text center-lbl"><strong>1</strong> Core</span></div>
+        </div>
+
+        <div class="aios-layers" id="aiosLayers">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI HISTORY (simplified timeline) ── -->
+  <section class="section alt-bg" id="timeline">
+    <div class="container">
+      <div class="section-label">70-YEAR STORY</div>
+      <div class="section-head-row">
+        <div>
+          <h2>AI didn't start in 2020</h2>
+          <p class="section-sub">It's been 70 years in the making. Click any era to learn what changed.</p>
+        </div>
+      </div>
+
+      <div class="ttrack-wrap">
+        <!-- Top Years Row -->
+        <div class="ttrack-row ttrack-years">
+          <div class="tyear-item active" data-year="1950" style="left: 5%;">1950s–60s</div>
+          <div class="tyear-item" data-year="1980" style="left: 23%;">1980s–90s</div>
+          <div class="tyear-item" data-year="2000" style="left: 41%;">2000s</div>
+          <div class="tyear-item" data-year="2010" style="left: 59%;">2010s</div>
+          <div class="tyear-item" data-year="2020" style="left: 77%;">2020s+</div>
+          <div class="tyear-item tyear-future" data-year="future" style="left: 94%;">Next?</div>
+        </div>
+
+        <!-- Central Track Bar & Pin Nodes -->
+        <div class="ttrack-bar-container">
+          <div class="ttrack-base-bar"></div>
+          <div class="ttrack-fill-bar" id="ttrackFillBar"></div>
+
+          <!-- Pin Nodes -->
+          <div class="tpin-node active" data-year="1950" style="left: 5%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-lightbulb"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+          <div class="tpin-node" data-year="1980" style="left: 23%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-gears"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+          <div class="tpin-node" data-year="2000" style="left: 41%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-database"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+          <div class="tpin-node" data-year="2010" style="left: 59%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-brain"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+          <div class="tpin-node" data-year="2020" style="left: 77%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-robot"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+          <div class="tpin-node tpin-future" data-year="future" style="left: 94%;">
+            <div class="tstem-top"></div>
+            <div class="tdot-circle"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div class="tstem-bot"></div>
+          </div>
+        </div>
+
+        <!-- Bottom Titles Row -->
+        <div class="ttrack-row ttrack-titles">
+          <div class="ttitle-item active" data-year="1950" style="left: 5%;">Foundations</div>
+          <div class="ttitle-item" data-year="1980" style="left: 23%;">Machine Learning</div>
+          <div class="ttitle-item" data-year="2000" style="left: 41%;">Big Data Era</div>
+          <div class="ttitle-item" data-year="2010" style="left: 59%;">Deep Learning</div>
+          <div class="ttitle-item" data-year="2020" style="left: 77%;"><span class="t-pill">Generative AI</span></div>
+          <div class="ttitle-item" data-year="future" style="left: 94%;"><span class="t-pill-curious">Stay Curious</span></div>
+        </div>
+      </div>
+
+      <div class="timeline-display" id="timelineDisplay"></div>
+    </div>
+  </section>
+
+  <!-- ── SHARE YOUR IDEA ── -->
+  <section class="section" id="share-ideas">
+    <div class="container">
+      <div class="section-label">CPG BOTTOM-UP HUB</div>
+      <div class="section-head-row">
+        <div>
+          <h2>What slows you down?</h2>
+          <p class="section-sub">Tell us about a task that takes too long. Leadership will review your ideas and find the right AI tool to help.</p>
+        </div>
+      </div>
+
+      <div class="hub-grid">
+        <!-- Form -->
+        <div class="form-panel">
+          <form id="ideaForm">
+            <div class="form-row-2">
+              <div class="fgroup">
+                <label for="empName">Your name or nickname</label>
+                <input id="empName" type="text" placeholder="e.g. Cuong or Landscape team" required>
+              </div>
+              <div class="fgroup">
+                <label for="deptSelect">Your department</label>
+                <select id="deptSelect" required>
+                  <option value="" disabled selected>Pick one...</option>
+                  <option>Architecture</option>
+                  <option>Urban Design & Planning</option>
+                  <option>Landscape Architecture</option>
+                  <option>Structural / MEP Engineering</option>
+                  <option>Quantity Surveying & Contracts</option>
+                  <option>Operations & IT</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="fgroup">
+              <label for="bottleneck">What task takes too much time? <span class="label-hint">(be specific)</span></label>
+              <textarea id="bottleneck" rows="3" placeholder="e.g. Every project, I spend 12 hours manually comparing room sizes in PDF drawings against the client's spec sheet." required></textarea>
+            </div>
+
+            <div class="fgroup">
+              <label for="aiIdea">Any AI idea that could help? <span class="label-hint">(optional — just describe the outcome you'd want)</span></label>
+              <textarea id="aiIdea" rows="3" placeholder="e.g. I'd love a tool that reads both documents and highlights where the numbers don't match."></textarea>
+            </div>
+
+            <div class="form-row-2">
+              <div class="fgroup">
+                <label for="hoursSaved">Roughly how many hours per week does this task take?</label>
+                <input id="hoursSaved" type="number" min="1" max="40" placeholder="e.g. 10">
+              </div>
+              <div class="fgroup">
+                <label for="securityLevel">Data type involved</label>
+                <select id="securityLevel">
+                  <option>Public / general info</option>
+                  <option>Internal CPG data</option>
+                  <option>Confidential client data</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit-full">
+              <i class="fa-solid fa-paper-plane"></i> Submit Contribution
+            </button>
+          </form>
+        </div>
+
+        <!-- Feed -->
+        <div class="feed-panel">
+          <div class="feed-head">
+            <span class="feed-title"><i class="fa-solid fa-comments"></i> Recent ideas from the team</span>
+            <span class="live-pill"><i class="fa-solid fa-circle"></i> Live</span>
+          </div>
+          <div class="feed-list" id="ideasFeed"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MANAGER DASHBOARD ── -->
+  <section class="section alt-bg" id="dashboard">
+    <div class="container">
+      <div class="section-label">LEADERSHIP VIEW</div>
+      <div class="section-head-row">
+        <div>
+          <h2>AI Readiness at a Glance</h2>
+          <p class="section-sub">For Soh Wee Keong, Stephen & Cuong — real-time snapshot of staff participation and AI opportunities.</p>
+        </div>
+      </div>
+
+      <div class="dash-stats">
+        <div class="dstat"><span class="dstat-n" id="totalIdeasCount">12</span><span class="dstat-l">Ideas submitted</span></div>
+        <div class="dstat"><span class="dstat-n" id="totalHoursSaved">94</span><span class="dstat-l">Hours could be saved / week</span></div>
+        <div class="dstat"><span class="dstat-n">5/6</span><span class="dstat-l">Departments active</span></div>
+        <div class="dstat"><span class="dstat-n">100%</span><span class="dstat-l">DTSC policy compliant</span></div>
+      </div>
+
+      <div class="dash-table-wrap">
+        <div class="dash-table-head">
+          <h3><i class="fa-solid fa-map-location-dot c-red"></i> Department Opportunity Map</h3>
+        </div>
+        <div class="table-scroll">
+          <table class="dash-table">
+            <thead>
+              <tr><th>Department</th><th>Ideas</th><th>Biggest pain point</th><th>Best AI tool</th><th>Priority</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="c-red">Architecture</strong></td>
+                <td>4</td>
+                <td>Render iterations take too long</td>
+                <td>Midjourney + Veras AI</td>
+                <td><span class="pri high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong class="c-gold">Quantity Surveying</strong></td>
+                <td>3</td>
+                <td>Manual BOQ spec comparisons</td>
+                <td>Copilot Studio PDF parser</td>
+                <td><span class="pri high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #38bdf8;">Urban Design</strong></td>
+                <td>2</td>
+                <td>Solar & wind simulations</td>
+                <td>Autodesk Forma AI</td>
+                <td><span class="pri med">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #10b981;">Landscape</strong></td>
+                <td>2</td>
+                <td>Plant palette research</td>
+                <td>Stable Diffusion + Firefly</td>
+                <td><span class="pri med">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color:#f4a900;">Engineering & FM</strong></td>
+                <td>1</td>
+                <td>BIM clash detection</td>
+                <td>MAGNUS Platform</td>
+                <td><span class="pri go">In Progress</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SLIDE MODAL ── -->
+  <div class="modal-overlay" id="slideModal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <h2><i class="fa-solid fa-presentation-screen"></i> WK Workshop Slide Outline</h2>
+        <button class="modal-close-btn" id="closeSlideModal">&times;</button>
+      </div>
+      <div class="modal-scroll">
+        <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 16px;">12-slide keynote outline for Soh Wee Keong's opening at the AI Consulting Workshop:</p>
+        <div id="slideListContainer"></div>
+      </div>
+      <div class="modal-foot">
+        <button class="btn-primary-sm" id="copySlidesBtn"><i class="fa-solid fa-copy"></i> Copy to clipboard</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div class="footer-brand">
+        <img src="cpg_international_logo.jpg" alt="CPG International" style="height: 36px; width: auto; object-fit: contain;">
+        <div>
+          <div class="footer-name">CPG AI <span class="c-gold">Hub</span></div>
+          <div class="footer-sub">CPG Vietnam Digital Transformation • Led by Soh Wee Keong</div>
+        </div>
+      </div>
+      <div class="footer-nav">
+        <a href="#what-is-ai">What is AI?</a>
+        <a href="#quick-learns">Videos</a>
+        <a href="#ai-tools">Tools</a>
+        <a href="#global-firms">Global Firms</a>
+        <a href="#share-ideas">Share Idea</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+  <script src="app.js?v=4"></script>
+</body>
+</html>

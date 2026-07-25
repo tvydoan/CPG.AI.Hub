@@ -578,7 +578,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 
 /* MapLibre Pins - Fixed Geo Anchoring */
 .maplibre-pin-wrap {
-  position: relative;
+  position: absolute !important;
   display: flex;
   align-items: center;
   justify-content: center;

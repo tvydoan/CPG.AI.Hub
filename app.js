@@ -268,7 +268,7 @@ const FIRMS = [
 
 const MAP_LOCATIONS = [
   {
-    name: 'CPG International (Singapore HQ)',
+    name: 'CPG Corporation (HQ)',
     coords: [103.7423, 1.3337],
     city: 'Singapore (Westgate Tower)',
     type: 'star',
@@ -277,7 +277,7 @@ const MAP_LOCATIONS = [
     source: 'Source: CPG Corporation HQ Singapore'
   },
   {
-    name: 'CPG International (Vietnam Office)',
+    name: 'CPG Vietnam (HCMC)',
     coords: [106.6297, 10.8231],
     city: 'Ho Chi Minh City, Vietnam',
     type: 'star',

@@ -1381,96 +1381,49 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .slide-info p  { font-size: 0.75rem; color: #6b7280; line-height: 1.55; }
 
 /* ══════════════════════════════
-   FOOTER (MAD Architects Soft Grey Fluid Style)
+   FOOTER (100% Full Width Solid Black MAD Style)
 ══════════════════════════════ */
 .footer {
-  padding: 60px 0 40px;
-  background: #ececee;
-  color: #1a1a1a;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  width: 100%;
+  padding: 44px 0;
+  background: #08080a;
+  color: #ffffff;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
 }
-
-.footer-top-bar {
-  display: flex; justify-content: space-between; align-items: flex-start;
-  margin-bottom: 40px;
+.footer-wrap {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 20px; flex-wrap: wrap;
 }
-.footer-brand-lg { display: flex; flex-direction: column; gap: 8px; }
-.footer-logo { height: 28px; width: auto; object-fit: contain; }
-.footer-title { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; color: #111; }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-logo  { height: 36px; width: auto; object-fit: contain; }
+.footer-name  { font-size: 0.95rem; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
+.footer-sub   { font-size: 0.72rem; color: rgba(255, 255, 255, 0.50); margin-top: 2px; }
 
+.footer-nav   { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-nav a {
+  font-size: 0.78rem; font-weight: 400; color: rgba(255, 255, 255, 0.60);
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 0.02em; text-decoration: none; outline: none !important;
+}
+.footer-nav a:hover { color: #ffffff; }
+
+/* ── MAD-STYLE BACK TO TOP PILL BUTTON ── */
 .back-to-top {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 34px; height: 46px; border-radius: 12px;
-  background: rgba(0, 0, 0, 0.08);
-  color: #1a1a1a; border: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 1.2rem; font-weight: 300; cursor: pointer;
+  width: 32px; height: 42px; border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 1.1rem; font-weight: 300; cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  outline: none !important;
+  margin-left: 8px; outline: none !important;
 }
 .back-to-top:hover {
-  background: rgba(0, 0, 0, 0.16);
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.40);
   transform: translateY(-2px);
-  color: #000;
+  color: #ffffff;
 }
-
-.footer-grid {
-  display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 40px;
-  margin-bottom: 60px;
-}
-
-.footer-col-title {
-  font-size: 0.85rem; font-weight: 600; color: #1a1a1a; margin-bottom: 14px;
-}
-
-.footer-pills { display: flex; flex-wrap: wrap; gap: 8px; }
-
-.footer-pill {
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 32px; padding: 0 14px; border-radius: 8px;
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase;
-  color: #2c2c2c; background: rgba(0, 0, 0, 0.06);
-  border: 1px solid transparent;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer; text-decoration: none; outline: none !important;
-}
-.footer-pill:hover {
-  background: rgba(0, 0, 0, 0.12); color: #000000;
-  transform: translateY(-1px);
-}
-
-/* Newsletter Box */
-.footer-news-box {
-  display: flex; align-items: center; background: rgba(0, 0, 0, 0.06);
-  padding: 4px; border-radius: 10px; border: 1px solid rgba(0, 0, 0, 0.05);
-  max-width: 360px; margin-bottom: 10px;
-}
-.footer-news-input {
-  flex: 1; background: transparent; border: none; padding: 8px 14px;
-  font-size: 0.82rem; color: #1a1a1a; outline: none;
-}
-.footer-news-input::placeholder { color: #888; }
-.footer-news-btn {
-  height: 32px; padding: 0 14px; border-radius: 7px;
-  font-size: 0.70rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em;
-  background: rgba(0, 0, 0, 0.12); color: #1a1a1a; border: none;
-  cursor: pointer; transition: background 0.2s; outline: none !important;
-}
-.footer-news-btn:hover { background: rgba(0, 0, 0, 0.22); color: #000; }
-
-.footer-news-sub { font-size: 0.68rem; color: #777; max-width: 340px; line-height: 1.5; }
-
-.footer-bottom-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding-top: 24px; border-top: 1px solid rgba(0, 0, 0, 0.08);
-  font-size: 0.72rem; color: #777; flex-wrap: wrap; gap: 16px;
-}
-.footer-legal { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
-.footer-legal a { color: #777; transition: color 0.2s; }
-.footer-legal a:hover { color: #111; }
-.footer-socials { display: flex; gap: 16px; }
-.footer-socials a { color: #666; transition: color 0.2s; font-weight: 500; }
-.footer-socials a:hover { color: #111; }
 
 /* ── VERTICAL SCROLL PROGRESS INDICATOR (MAD Style) ── */
 .scroll-progress-track {

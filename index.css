@@ -246,7 +246,18 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 /* ── DROPDOWNS (MAD Architects Style - Clean & Iconless) ── */
 .nav-dropdown { position: relative; display: flex; align-items: center; }
-.nav-dd-trigger { display: inline-flex; align-items: center; gap: 6px; }
+.nav-dd-trigger { display: inline-flex; align-items: center; gap: 4px; }
+.nav-dd-trigger .dd-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-left: 2px; font-weight: 300; font-size: 0.85rem; opacity: 0.9;
+  transition: transform 0.2s ease;
+}
+.nav-dd-trigger .dd-icon::after {
+  content: '+';
+}
+.nav-dd-trigger.active .dd-icon::after {
+  content: '—';
+}
 
 .nav-dd-menu {
   display: none; position: absolute; top: calc(100% + 8px); left: 0;

@@ -88,12 +88,12 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: transparent;
-  padding: 6px 0;
+  padding: 4px 0;
   transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-  padding: 4px 0 16px 0;
+  padding: 4px 0;
   background: transparent;
   border-bottom: none !important;
   box-shadow: none !important;
@@ -101,16 +101,16 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 
 .nav-wrap {
   max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; gap: 8px;
-  padding: 0 24px; height: 46px;
+  display: flex; align-items: center; gap: 6px;
+  padding: 0 24px; height: 40px;
   position: relative; z-index: 2;
 }
 
-/* ── PROGRESSIVE BLUR & DARK VIGNETTE (MAD-style Ultra Blur) ── */
+/* ── PROGRESSIVE BLUR & DARK VIGNETTE (Compact MAD-style 70px) ── */
 .nav-blur {
-  position: absolute; top: 0; left: 0; right: 0; height: 160px;
+  position: absolute; top: 0; left: 0; right: 0; height: 70px;
   z-index: 1; pointer-events: none;
-  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.5) 55%, rgba(10, 10, 12, 0) 100%);
+  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.5) 60%, rgba(10, 10, 12, 0) 100%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   backdrop-filter: blur(40px) saturate(200%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
@@ -119,44 +119,44 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 }
 .navbar.scrolled .nav-blur {
   opacity: 1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.45) 60%, rgba(255, 255, 255, 0) 100%);
   -webkit-backdrop-filter: blur(40px) saturate(200%);
   backdrop-filter: blur(40px) saturate(200%);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
 }
 
 .nav-blur > div { position: absolute; inset: 0; }
 
 .nav-blur > div:nth-child(1) {
   -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 30%);
-  mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 30%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 40%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 40%);
 }
 .nav-blur > div:nth-child(2) {
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 30%, transparent 45%);
-  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 30%, transparent 45%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 15%, black 40%, transparent 60%);
+  mask-image: linear-gradient(to bottom, transparent 15%, black 40%, transparent 60%);
 }
 .nav-blur > div:nth-child(3) {
   -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 15%, black 30%, black 45%, transparent 60%);
-  mask-image: linear-gradient(to bottom, transparent 15%, black 30%, black 45%, transparent 60%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, black 60%, transparent 80%);
+  mask-image: linear-gradient(to bottom, transparent 30%, black 60%, transparent 80%);
 }
 .nav-blur > div:nth-child(4) {
   -webkit-backdrop-filter: blur(28px); backdrop-filter: blur(28px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 30%, black 45%, black 60%, transparent 75%);
-  mask-image: linear-gradient(to bottom, transparent 30%, black 45%, black 60%, transparent 75%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 45%, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 45%, black 80%, transparent 100%);
 }
 .nav-blur > div:nth-child(5) {
   -webkit-backdrop-filter: blur(36px); backdrop-filter: blur(36px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 45%, black 60%, black 75%, transparent 90%);
-  mask-image: linear-gradient(to bottom, transparent 45%, black 60%, black 75%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
 }
 .nav-blur > div:nth-child(6) {
   -webkit-backdrop-filter: blur(45px); backdrop-filter: blur(45px);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
-  mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 75%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 75%, black 100%);
 }
 
 /* ── BRAND LOGO (Clean & Borderless) ── */
@@ -166,7 +166,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   background: transparent !important;
   -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
   border: none !important;
-  padding: 2px 4px;
+  padding: 0;
   border-radius: 0;
   box-shadow: none !important;
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -179,22 +179,22 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   transform: translateY(-1px);
 }
 .nav-logo-img {
-  height: 22px; width: auto; object-fit: contain;
+  height: 20px; width: auto; object-fit: contain;
 }
-.nav-site-name { font-size: 0.84rem; font-weight: 700; display: block; color: #fff; letter-spacing: -0.01em; transition: color 0.3s ease; }
-.nav-site-sub  { font-size: 0.48rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; display: block; line-height: 1; transition: color 0.3s ease; }
+.nav-site-name { font-size: 0.80rem; font-weight: 700; display: block; color: #fff; letter-spacing: -0.01em; transition: color 0.3s ease; }
+.nav-site-sub  { font-size: 0.45rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; display: block; line-height: 1; transition: color 0.3s ease; }
 
 /* Scrolled MAD-style black regular text */
 .navbar.scrolled .nav-site-name { color: #111111; font-weight: 600; }
 .navbar.scrolled .nav-site-sub  { color: #6b7280; font-weight: 500; }
 
-/* ── FROSTED GLASS CAPSULE NAV LINKS (Compact MAD Style) ── */
-.nav-links { display: flex; align-items: center; gap: 5px; flex: 1; }
+/* ── FROSTED GLASS CAPSULE NAV LINKS (Compact Right-Aligned MAD Style) ── */
+.nav-links { display: flex; align-items: center; gap: 5px; margin-left: auto; }
 
 .nav-link {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 30px; padding: 0 13px; border-radius: 7px;
-  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
+  height: 28px; padding: 0 11px; border-radius: 6px;
+  font-size: 0.70rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.09);
   -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
@@ -327,7 +327,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 }
 
 /* ── NAV CTA BUTTONS ── */
-.nav-cta { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.nav-cta { display: flex; align-items: center; gap: 5px; margin-left: 0; }
 
 /* mobile toggle */
 .mobile-toggle {
@@ -348,23 +348,23 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .btn-primary:hover { background: var(--red-lt); box-shadow: 0 0 20px rgba(209,0,0,0.35); transform: translateY(-1px); }
 
 .btn-primary-sm {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 34px; padding: 0 18px; border-radius: 8px;
-  font-size: 0.76rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  height: 28px; padding: 0 12px; border-radius: 6px;
+  font-size: 0.70rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em;
   background: var(--red); color: #fff; border: 1px solid transparent;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(209, 0, 0, 0.35);
+  box-shadow: 0 3px 10px rgba(209, 0, 0, 0.35);
   box-sizing: border-box;
 }
-.btn-primary-sm:hover { background: var(--red-lt); transform: translateY(-1px); box-shadow: 0 6px 18px rgba(209, 0, 0, 0.5); }
+.btn-primary-sm:hover { background: var(--red-lt); transform: translateY(-1px); box-shadow: 0 5px 14px rgba(209, 0, 0, 0.5); }
 
 .btn-ghost {
-  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
-  height: 34px; padding: 0 16px; border-radius: 8px;
-  font-size: 0.76rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  height: 28px; padding: 0 11px; border-radius: 6px;
+  font-size: 0.70rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.04em;
   background: rgba(255, 255, 255, 0.09); color: rgba(255, 255, 255, 0.9);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   box-sizing: border-box;
@@ -534,9 +534,9 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 /* ── VIDEO LIGHTBOX ── */
 .video-lightbox {
-  display: none; position: fixed; inset: 0; z-index: 500;
+  display: none; position: fixed; inset: 0; z-index: 9999 !important;
   background: rgba(0,0,0,0.9); align-items: center; justify-content: center;
-  padding: 20px;
+  padding: 70px 20px 20px 20px;
 }
 .video-lightbox.open { display: flex; }
 .lightbox-inner {
@@ -1367,16 +1367,18 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
    SLIDE MODAL
 ══════════════════════════════ */
 .modal-overlay {
-  display: none; position: fixed; inset: 0; z-index: 300;
+  display: none; position: fixed; inset: 0; z-index: 9999 !important;
   background: rgba(0,0,0,0.85); align-items: center; justify-content: center;
-  backdrop-filter: blur(6px);
+  padding: 70px 20px 20px 20px;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
 }
 .modal-overlay.open { display: flex; }
 .modal-box {
   background: #fff; border: 1px solid #e5e7eb;
   border-radius: 16px; width: min(680px, 95vw);
-  max-height: 90vh; display: flex; flex-direction: column;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.3);
+  max-height: 85vh; display: flex; flex-direction: column;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+  margin-top: 10px;
 }
 .modal-top {
   display: flex; align-items: center; justify-content: space-between;

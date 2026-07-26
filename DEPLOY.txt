@@ -1,0 +1,9 @@
+GITHUB WEB UPLOAD — NO FOLDERS
+
+1. Extract this ZIP.
+2. Open the GitHub repository.
+3. Add file > Upload files.
+4. Select ALL extracted files at once and upload them to the repository root.
+5. Commit changes.
+
+All images are already flattened into the root; no folders are required.

@@ -285,19 +285,21 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   white-space: nowrap;
 }
 
-/* ── MAD FOCUS DIMMER EFFECT: When hovering 1, the other 2 become grey ── */
+/* ── MAD FOCUS DIMMER EFFECT: Borderless text links (Hover 1 -> others turn grey) ── */
 .nav-dd-menu:hover .nav-dd-item {
-  opacity: 0.45;
-  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 0.4;
+  color: rgba(255, 255, 255, 0.45) !important;
+  background: transparent !important;
 }
 .nav-dd-menu .nav-dd-item:hover {
   opacity: 1;
   color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  transform: translateX(3px);
+  font-weight: 600 !important;
+  background: transparent !important;
+  transform: translateX(4px);
 }
 
-/* Scrolled Dropdown Styling (MAD Ultra Light Glass + Focus Dimmer) */
+/* Scrolled Dropdown Styling (MAD Light Glass - Borderless Text Links) */
 .navbar.scrolled .nav-dd-menu {
   background: rgba(255, 255, 255, 0.92) !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -309,16 +311,19 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   color: #1a1a1a !important;
   font-weight: 500 !important;
   opacity: 1;
+  background: transparent !important;
 }
 .navbar.scrolled .nav-dd-menu:hover .nav-dd-item {
-  opacity: 0.38;
-  color: #777777 !important;
+  opacity: 0.35;
+  color: #888888 !important;
+  background: transparent !important;
 }
 .navbar.scrolled .nav-dd-menu .nav-dd-item:hover {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.06) !important;
   color: #000000 !important;
-  transform: translateX(3px);
+  font-weight: 600 !important;
+  background: transparent !important;
+  transform: translateX(4px);
 }
 
 /* ── NAV CTA BUTTONS ── */

@@ -88,12 +88,12 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: transparent;
-  padding: 12px 0;
+  padding: 6px 0;
   transition: padding 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar.scrolled {
-  padding: 10px 0 24px 0;
+  padding: 4px 0 16px 0;
   background: transparent;
   border-bottom: none !important;
   box-shadow: none !important;
@@ -102,24 +102,26 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .nav-wrap {
   max-width: 1200px; margin: 0 auto;
   display: flex; align-items: center; gap: 8px;
-  padding: 0 24px; height: 58px;
+  padding: 0 24px; height: 46px;
   position: relative; z-index: 2;
 }
 
-/* ── PROGRESSIVE BLUR & DARK VIGNETTE (MAD-style) ── */
+/* ── PROGRESSIVE BLUR & DARK VIGNETTE (MAD-style Ultra Blur) ── */
 .nav-blur {
   position: absolute; top: 0; left: 0; right: 0; height: 160px;
   z-index: 1; pointer-events: none;
-  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.88) 0%, rgba(10, 10, 12, 0.45) 55%, rgba(10, 10, 12, 0) 100%);
+  background: linear-gradient(to bottom, rgba(10, 10, 12, 0.92) 0%, rgba(10, 10, 12, 0.5) 55%, rgba(10, 10, 12, 0) 100%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  backdrop-filter: blur(40px) saturate(200%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 0%, black 75%, transparent 100%);
   transition: opacity 0.3s ease, background 0.3s ease;
 }
 .navbar.scrolled .nav-blur {
   opacity: 1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 100%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.4) 60%, rgba(255, 255, 255, 0) 100%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  backdrop-filter: blur(40px) saturate(200%);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
 }
@@ -127,32 +129,32 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .nav-blur > div { position: absolute; inset: 0; }
 
 .nav-blur > div:nth-child(1) {
-  -webkit-backdrop-filter: blur(1px); backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
   -webkit-mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 30%);
   mask-image: linear-gradient(to bottom, black 0%, black 15%, transparent 30%);
 }
 .nav-blur > div:nth-child(2) {
-  -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 30%, transparent 45%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 30%, transparent 45%);
 }
 .nav-blur > div:nth-child(3) {
-  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 15%, black 30%, black 45%, transparent 60%);
   mask-image: linear-gradient(to bottom, transparent 15%, black 30%, black 45%, transparent 60%);
 }
 .nav-blur > div:nth-child(4) {
-  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(28px); backdrop-filter: blur(28px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 30%, black 45%, black 60%, transparent 75%);
   mask-image: linear-gradient(to bottom, transparent 30%, black 45%, black 60%, transparent 75%);
 }
 .nav-blur > div:nth-child(5) {
-  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(36px); backdrop-filter: blur(36px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 45%, black 60%, black 75%, transparent 90%);
   mask-image: linear-gradient(to bottom, transparent 45%, black 60%, black 75%, transparent 90%);
 }
 .nav-blur > div:nth-child(6) {
-  -webkit-backdrop-filter: blur(24px); backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(45px); backdrop-filter: blur(45px);
   -webkit-mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
   mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
 }
@@ -160,11 +162,11 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 /* ── BRAND LOGO (Clean & Borderless) ── */
 .nav-brand,
 .navbar.scrolled .nav-brand {
-  display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-right: 12px;
+  display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-right: 10px;
   background: transparent !important;
   -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
   border: none !important;
-  padding: 4px 6px;
+  padding: 2px 4px;
   border-radius: 0;
   box-shadow: none !important;
   transition: opacity 0.25s ease, transform 0.25s ease;
@@ -177,26 +179,25 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   transform: translateY(-1px);
 }
 .nav-logo-img {
-  height: 28px; width: auto; object-fit: contain;
+  height: 22px; width: auto; object-fit: contain;
 }
-.nav-site-name { font-size: 0.9rem; font-weight: 700; display: block; color: #fff; letter-spacing: -0.01em; transition: color 0.3s ease; }
-.nav-site-sub  { font-size: 0.52rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; display: block; line-height: 1; transition: color 0.3s ease; }
+.nav-site-name { font-size: 0.84rem; font-weight: 700; display: block; color: #fff; letter-spacing: -0.01em; transition: color 0.3s ease; }
+.nav-site-sub  { font-size: 0.48rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; display: block; line-height: 1; transition: color 0.3s ease; }
 
 /* Scrolled MAD-style black regular text */
 .navbar.scrolled .nav-site-name { color: #111111; font-weight: 600; }
 .navbar.scrolled .nav-site-sub  { color: #6b7280; font-weight: 500; }
 
-/* ── FROSTED GLASS CAPSULE NAV LINKS (MAD Rounded Rectangle) ── */
-/* ── FROSTED GLASS CAPSULE NAV LINKS (MAD Rounded Rectangle) ── */
-.nav-links { display: flex; align-items: center; gap: 6px; flex: 1; }
+/* ── FROSTED GLASS CAPSULE NAV LINKS (Compact MAD Style) ── */
+.nav-links { display: flex; align-items: center; gap: 5px; flex: 1; }
 
 .nav-link {
   display: inline-flex; align-items: center; justify-content: center;
-  height: 34px; padding: 0 16px; border-radius: 8px;
-  font-size: 0.76rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
+  height: 30px; padding: 0 13px; border-radius: 7px;
+  font-size: 0.72rem; font-weight: 400; letter-spacing: 0.04em; text-transform: uppercase;
   color: rgba(255, 255, 255, 0.9);
   background: rgba(255, 255, 255, 0.09);
-  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
@@ -219,7 +220,6 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .nav-link.c-gold { color: var(--gold); }
 .nav-link.c-gold:hover { color: var(--gold-lt); }
 
-/* Scrolled Nav Link Styling (MAD style black text on translucent light rectangle boxes) */
 /* Remove all black focus rings & borders */
 button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-visible {
   outline: none !important;
@@ -228,7 +228,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .navbar.scrolled .nav-link {
   color: #1a1a1a;
   font-weight: 400;
-  border-radius: 8px;
+  border-radius: 7px;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid transparent !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
@@ -244,12 +244,12 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   border-color: var(--red) !important;
 }
 
-/* ── DROPDOWNS (MAD Architects Style - Clean & Iconless) ── */
+/* ── DROPDOWNS (MAD Architects Style - Clean & Heavy Blur) ── */
 .nav-dropdown { position: relative; display: flex; align-items: center; }
 .nav-dd-trigger { display: inline-flex; align-items: center; gap: 4px; }
 .nav-dd-trigger .dd-icon {
   display: inline-flex; align-items: center; justify-content: center;
-  margin-left: 2px; font-weight: 300; font-size: 0.85rem; opacity: 0.9;
+  margin-left: 2px; font-weight: 300; font-size: 0.82rem; opacity: 0.9;
   transition: transform 0.2s ease;
 }
 .nav-dd-trigger .dd-icon::after {
@@ -260,12 +260,13 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 }
 
 .nav-dd-menu {
-  display: none; position: absolute; top: calc(100% + 8px); left: 0;
-  background: rgba(22, 24, 28, 0.94);
-  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+  display: none; position: absolute; top: calc(100% + 6px); left: 0;
+  background: rgba(22, 24, 28, 0.92);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  backdrop-filter: blur(40px) saturate(200%);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px; padding: 6px; min-width: 190px;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  border-radius: 12px; padding: 6px; min-width: 175px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
   z-index: 999;
   margin-top: -4px;
 }
@@ -278,32 +279,46 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 .nav-dd-item {
   display: block;
-  padding: 10px 16px; border-radius: 8px;
-  font-size: 0.86rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);
-  transition: background 0.2s, color 0.2s, transform 0.15s;
+  padding: 8px 14px; border-radius: 7px;
+  font-size: 0.82rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s, color 0.2s, opacity 0.2s, transform 0.15s;
   white-space: nowrap;
 }
-.nav-dd-item:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+
+/* ── MAD FOCUS DIMMER EFFECT: When hovering 1, the other 2 become grey ── */
+.nav-dd-menu:hover .nav-dd-item {
+  opacity: 0.45;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.nav-dd-menu .nav-dd-item:hover {
+  opacity: 1;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
   transform: translateX(3px);
 }
 
-/* Scrolled Dropdown Styling (Clean MAD Light Glass) */
+/* Scrolled Dropdown Styling (MAD Ultra Light Glass + Focus Dimmer) */
 .navbar.scrolled .nav-dd-menu {
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  backdrop-filter: blur(40px) saturate(200%);
 }
 .navbar.scrolled .nav-dd-item {
   color: #1a1a1a !important;
   font-weight: 500 !important;
+  opacity: 1;
 }
-.navbar.scrolled .nav-dd-item:hover {
+.navbar.scrolled .nav-dd-menu:hover .nav-dd-item {
+  opacity: 0.38;
+  color: #777777 !important;
+}
+.navbar.scrolled .nav-dd-menu .nav-dd-item:hover {
+  opacity: 1;
   background: rgba(0, 0, 0, 0.06) !important;
   color: #000000 !important;
+  transform: translateX(3px);
 }
 
 /* ── NAV CTA BUTTONS ── */

@@ -72,7 +72,7 @@ button { cursor: pointer; }
   gap: 24px; flex-wrap: wrap; margin-bottom: 40px;
 }
 .section-head-row h2 { font-size: 1.7rem; font-weight: 700; margin-bottom: 6px; }
-.section-sub { color: var(--muted); font-size: 0.88rem; max-width: 620px; }
+.section-sub { color: var(--muted); font-size: 0.88rem; max-width: 850px; }
 
 /* ── TYPOGRAPHY ── */
 h1, h2, h3 { font-weight: 700; line-height: 1.25; }
@@ -166,7 +166,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   border: 1px solid rgba(255, 255, 255, 0.15);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: none !important;
   box-sizing: border-box;
 }
 .nav-link:hover {
@@ -174,13 +174,13 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   background: rgba(255, 255, 255, 0.22);
   border-color: rgba(255, 255, 255, 0.35);
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: none !important;
 }
 .nav-link.active {
   color: #ffffff;
   background: rgba(209, 0, 0, 0.85);
   border-color: rgba(255, 60, 60, 0.6);
-  box-shadow: 0 4px 16px rgba(209, 0, 0, 0.4);
+  box-shadow: none !important;
 }
 .nav-link.c-gold { color: var(--gold); }
 .nav-link.c-gold:hover { color: var(--gold-lt); }
@@ -196,7 +196,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   border-radius: 7px;
   background: rgba(0, 0, 0, 0.05);
   border: 1px solid transparent !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: none !important;
 }
 .navbar.scrolled .nav-link:hover {
   color: #000000;
@@ -207,6 +207,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   color: #ffffff !important;
   background: var(--red) !important;
   border-color: var(--red) !important;
+  box-shadow: none !important;
 }
 
 /* ── DROPDOWNS (MAD Architects Style - Clean & Heavy Blur) ── */
@@ -316,12 +317,16 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   display: inline-flex; align-items: center; justify-content: center; gap: 5px;
   height: 28px; padding: 0 12px; border-radius: 6px;
   font-size: 0.70rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.04em;
-  background: var(--red); color: #fff; border: 1px solid transparent;
+  background: rgba(209, 0, 0, 0.85); color: #fff; border: 1px solid rgba(255, 60, 60, 0.5);
+  -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 3px 10px rgba(209, 0, 0, 0.35);
+  box-shadow: none !important;
   box-sizing: border-box;
 }
-.btn-primary-sm:hover { background: var(--red-lt); transform: translateY(-1px); box-shadow: 0 5px 14px rgba(209, 0, 0, 0.5); }
+.btn-primary-sm:hover {
+  background: var(--red); border-color: rgba(255, 100, 100, 0.7);
+  transform: translateY(-1px); box-shadow: none !important;
+}
 
 .btn-ghost {
   display: inline-flex; align-items: center; justify-content: center; gap: 5px;
@@ -331,22 +336,30 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   border: 1px solid rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: none !important;
   box-sizing: border-box;
 }
 .btn-ghost:hover {
   color: #fff; background: rgba(255, 255, 255, 0.22); border-color: rgba(255, 255, 255, 0.35);
-  transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px); box-shadow: none !important;
 }
 
 .navbar.scrolled .btn-ghost {
   color: #1a1a1a;
   background: rgba(0, 0, 0, 0.05);
-  border-color: rgba(0, 0, 0, 0.08);
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
 }
 .navbar.scrolled .btn-ghost:hover {
   color: #000000;
   background: rgba(0, 0, 0, 0.1);
+  box-shadow: none !important;
+}
+.navbar.scrolled .btn-primary-sm {
+  color: #ffffff !important;
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+  box-shadow: none !important;
 }
 
 .btn-ghost-lg {

@@ -623,32 +623,32 @@ function initAios() {
 const TIMELINE = {
   1950: {
     year: '1950s–60s', title: 'Foundations of Artificial Intelligence',
-    desc: 'Alan Turing proposed the Turing Test (1950), followed by the Dartmouth Conference (1956) where John McCarthy coined "Artificial Intelligence". Early breakthroughs included Logic Theorist and LISP programming. The dream of simulating human intelligence was born.',
+    desc: 'Alan Turing proposed the Turing Test in 1950.<br><br>In 1956, the Dartmouth Conference took place, where John McCarthy coined the term "Artificial Intelligence".<br><br>Early breakthroughs included Logic Theorist and LISP programming.<br><br>The dream of simulating human intelligence was born.',
     tags: ['Alan Turing', 'Dartmouth 1956', 'Logic Theorist', 'LISP Language', 'John McCarthy'],
   },
   1980: {
     year: '1980s–90s', title: 'Machine Learning & Expert Systems',
-    desc: 'Rule-based Expert Systems emerged for commercial use — like XCON at Digital Equipment Corp saving $40M/year. Backpropagation revived neural networks, and Support Vector Machines (SVM) & Random Forests became industry standards for structured data prediction.',
+    desc: 'Rule-based Expert Systems emerged for commercial use, like XCON at Digital Equipment Corp, which saved $40M a year.<br><br>Backpropagation revived neural networks.<br><br>Support Vector Machines (SVM) and Random Forests became industry standards for structured data prediction.',
     tags: ['Expert Systems', 'Backpropagation', 'Machine Learning', 'SVM & Random Forest', 'Rule-Based AI'],
   },
   2000: {
-    year: '2000s', title: 'Big Data & GPU Computing Era',
-    desc: 'The explosive growth of the web generated massive datasets. GPUs originally built for graphics were repurposed for parallel computing, enabling machine learning to scale to millions of parameters and early CAD/GIS spatial pattern recognition.',
-    tags: ['Big Data', 'Parallel GPU Computing', 'Spatial Machine Learning', 'CAD Automation'],
+    year: '2000s', title: 'Big Data & AI in the Background',
+    desc: 'The explosive growth of the web generated massive datasets for the first time.<br><br>GPUs, originally built for graphics, were repurposed for parallel computing, letting machine learning scale to millions of parameters.<br><br>In 2006, Facebook\'s News Feed started using AI algorithms to decide what content each person sees.<br><br>This was AI quietly shaping what people saw online, working in the background, long before anyone talked to it directly.',
+    tags: ['Big Data', 'GPU Computing', 'Facebook News Feed 2006', 'Recommendation Algorithms', 'Spatial Machine Learning'],
   },
   2010: {
-    year: '2010s', title: 'Deep Learning Revolution',
-    desc: 'AlexNet (2012) shattered visual recognition error rates on ImageNet, DeepMind\'s AlphaGo (2016) defeated world champions, and ResNet enabled deep neural networks. In 2017, the Transformer paper "Attention Is All You Need" set the stage for modern LLMs.',
-    tags: ['AlexNet 2012', 'AlphaGo 2016', 'ResNet', 'Transformer Architecture', 'Computer Vision & NLP'],
+    year: '2010s', title: 'Virtual Assistants & Deep Learning Revolution',
+    desc: 'In 2011, Siri launched on the iPhone 4S, becoming the first popular virtual assistant people could actually talk to.<br><br>AlexNet (2012) shattered visual recognition error rates on ImageNet.<br><br>DeepMind\'s AlphaGo (2016) defeated the world Go champion, and ResNet enabled much deeper neural networks.<br><br>In 2017, the Transformer paper "Attention Is All You Need" set the stage for modern LLMs like ChatGPT.',
+    tags: ['Siri 2011', 'AlexNet 2012', 'AlphaGo 2016', 'Transformer Architecture', 'Computer Vision & NLP'],
   },
   2020: {
     year: '2020s+', title: 'Generative AI & Autonomous Agents',
-    desc: 'GPT-4, Claude 3.5, and Diffusion Models (Midjourney/DALL-E) brought multimodal intelligence to the mainstream. AI evolved from passive Q&A tools into autonomous Agents that execute complex multi-step workflows, code, and BIM spatial optimization.',
+    desc: 'ChatGPT launched in late 2022 and started a global wave.<br><br>Then came GPT-4, Google Gemini, Anthropic Claude, xAI Grok, and Diffusion Models like Midjourney and DALL-E, bringing multimodal intelligence to the mainstream.<br><br>AI evolved from passive question and answer tools into autonomous Agents that execute complex multi-step workflows, write code, and optimize BIM spatial design.',
     tags: ['GPT-4 & Claude 3.5', 'Diffusion Models', 'Multimodal AI', 'Autonomous AI Agents', 'Copilot Studio'],
   },
   future: {
-    year: 'Future & Beyond', title: 'The Future is Unwritten — Stay Curious! ✨',
-    desc: '<strong>"Shaping the future through design innovation."</strong><br><br>From rule-based systems → data-driven learning → generative & multimodal intelligence.<br>AI isn\'t replacing human expertise — it multiplies design potential. What daily workflow will you transform next at CPG?',
+    year: 'Future & Beyond', title: 'The Future is Unwritten, Stay Curious! ✨',
+    desc: '<strong>"Shaping the future through design innovation."</strong><br><br>From rule-based systems, to data-driven learning, to generative and multimodal intelligence.<br><br>AI isn\'t replacing human expertise, it multiplies design potential. What daily workflow will you transform next at CPG?',
     tags: ['Shaping the Future', 'Design Innovation', 'Stay Curious ✨', 'Human + AI Collaboration'],
   },
 };

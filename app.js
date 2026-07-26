@@ -28,6 +28,19 @@ function initNav() {
     });
   }
 
+  // ── Vertical Scroll Progress Indicator (MAD Style) ──
+  const progressBar = document.getElementById('scrollProgressBar');
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0 && progressBar) {
+      const progress = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+      progressBar.style.height = `${progress}%`;
+    }
+  }
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
   // ── Click-toggle dropdowns (fixes hover-gap bug) ──
   const dropdowns = document.querySelectorAll('.nav-dropdown');
 
@@ -801,6 +814,7 @@ function initSlideModal() {
   });
 
   openBtn?.addEventListener('click', () => modal.classList.add('open'));
+  document.getElementById('openSlidesBtnFooter')?.addEventListener('click', () => modal.classList.add('open'));
   closeBtn?.addEventListener('click', () => modal.classList.remove('open'));
   modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
 

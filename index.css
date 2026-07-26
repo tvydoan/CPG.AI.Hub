@@ -274,15 +274,16 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 
 /* Scrolled Dropdown Styling (White Frosted Glass Popup with Dark Text) */
 .navbar.scrolled .nav-dd-menu {
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
 }
-.navbar.scrolled .nav-dd-item strong { color: #111111; }
-.navbar.scrolled .nav-dd-item span { color: #6b7280; }
-.navbar.scrolled .nav-dd-item:hover { background: rgba(0, 0, 0, 0.05); }
+.navbar.scrolled .nav-dd-item strong { color: #111111 !important; }
+.navbar.scrolled .nav-dd-item span { color: #6b7280 !important; }
+.navbar.scrolled .nav-dd-item > i { color: var(--red) !important; }
+.navbar.scrolled .nav-dd-item:hover { background: rgba(0, 0, 0, 0.06) !important; }
 
 /* ── NAV CTA BUTTONS ── */
 .nav-cta { display: flex; align-items: center; gap: 8px; margin-left: auto; }

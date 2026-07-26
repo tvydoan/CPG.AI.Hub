@@ -153,22 +153,26 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   mask-image: linear-gradient(to bottom, transparent 60%, black 100%);
 }
 
-/* ── BRAND GLASS BADGE ── */
-/* Unscrolled: Clean logo with NO border */
-.nav-brand {
+/* ── BRAND LOGO (Clean & Borderless like MAD) ── */
+.nav-brand,
+.navbar.scrolled .nav-brand {
   display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-right: 12px;
-  background: transparent;
-  -webkit-backdrop-filter: none; backdrop-filter: none;
-  border: 1px solid transparent;
-  padding: 6px 14px; border-radius: 24px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: none;
+  background: transparent !important;
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important;
+  border: none !important;
+  padding: 4px 6px;
+  border-radius: 0;
+  box-shadow: none !important;
+  transition: opacity 0.25s ease, transform 0.25s ease;
 }
-.nav-brand:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
+.nav-brand:hover,
+.navbar.scrolled .nav-brand:hover {
+  background: transparent !important;
+  border-color: transparent !important;
+  opacity: 0.85;
   transform: translateY(-1px);
 }
+
 
 /* Scrolled: Floating dark glass badge with border & blur */
 .navbar.scrolled .nav-brand {

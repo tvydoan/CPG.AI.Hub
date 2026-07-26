@@ -228,6 +228,21 @@ function initVideoSection() {
       renderVideos(btn.dataset.vcat);
     });
   });
+
+  // Hero "Watch 1-min videos" button: open the clearest, most foundational
+  // video directly in the lightbox instead of just scrolling to the grid.
+  // Staff who want more can still scroll down afterwards to see all videos.
+  const FEATURED_VIDEO_ID = 'qYNweeDHiyU'; // "AI, ML, Deep Learning and Generative AI Explained"
+  const heroBtn = document.getElementById('heroWatchBtn');
+  if (heroBtn) {
+    heroBtn.addEventListener('click', (e) => {
+      const featured = VIDEOS.find(v => v.id === FEATURED_VIDEO_ID);
+      if (!featured) return; // fall back to normal scroll link if not found
+      e.preventDefault();
+      frame.src = `https://www.youtube.com/embed/${featured.id}?autoplay=1`;
+      lb.classList.add('open');
+    });
+  }
 }
 
 /* ══════════════════
@@ -777,6 +792,30 @@ function initFeedAndForm() {
 
   // Form submit
   const form = document.getElementById('ideaForm');
+
+  // Quick-select chips: clicking one fills the bottleneck textarea with a
+  // ready-made starter phrase, so staff can just tap instead of typing from scratch.
+  const bottleneckField = document.getElementById('bottleneck');
+  document.querySelectorAll('#bottleneckChips .quick-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#bottleneckChips .quick-chip').forEach(c => c.classList.remove('chip-selected'));
+      chip.classList.add('chip-selected');
+      if (bottleneckField) {
+        bottleneckField.value = chip.dataset.text;
+        bottleneckField.focus();
+      }
+    });
+  });
+
+  // Collapsible "extra details" (hours per week + data type). Hidden by
+  // default so the form looks short on mobile; staff can expand it if they want.
+  const extraToggleBtn = document.getElementById('extraToggleBtn');
+  const extraFields = document.getElementById('extraFields');
+  extraToggleBtn?.addEventListener('click', () => {
+    extraFields?.classList.toggle('hidden');
+    extraToggleBtn.classList.toggle('open');
+  });
+
   form?.addEventListener('submit', e => {
     e.preventDefault();
     const name   = document.getElementById('empName').value.trim() || 'Anonymous';
@@ -793,6 +832,9 @@ function initFeedAndForm() {
     if (hoursEl && hours) hoursEl.textContent = parseInt(hoursEl.textContent) + parseInt(hours);
 
     form.reset();
+    document.querySelectorAll('#bottleneckChips .quick-chip').forEach(c => c.classList.remove('chip-selected'));
+    extraFields?.classList.add('hidden');
+    extraToggleBtn?.classList.remove('open');
 
     // Short confirmation
     const btn = form.querySelector('.btn-submit-full');
@@ -814,7 +856,7 @@ const SLIDES = [
   { num: 3, title: '70 Years to Get Here', body: 'From Dartmouth 1956 > Expert Systems 1980s > Deep Learning 2012 > ChatGPT 2022 > AI Agents 2024. This is not a trend - it is a fundamental shift.' },
   { num: 4, title: 'Global AI Investment: Where is the Money?', body: '$200B+ invested in 2023 alone. Google, Microsoft, Amazon, and NVIDIA racing for the infrastructure layer. Architecture & urban design sector expected to see 40% productivity gain by 2028.' },
   { num: 5, title: 'What Global AEC Leaders Are Doing', body: 'Foster+Partners: AI environmental sims. BIG: Generative massing. Arup: BIM validation agents. Gensler: Space optimization. All seeing measurable results - right now.' },
-  { num: 6, title: 'The 5-Layer AI Agent Model', body: 'Core Identity > Rules > Skills > Agents > Tools. An AI system CPG can build - starting simple, growing to fully autonomous agents that check drawings overnight while the team sleeps.' },
+  { num: 6, title: 'The 5-Layer AI Agent Model (AIOS)', body: 'Core Identity > Rules > Skills > Agents > Tools. An AI system CPG can build - starting simple, growing to fully autonomous agents that check drawings overnight while the team sleeps.' },
   { num: 7, title: 'CPG\'s Starting Point: Real Pain Points', body: 'Data from this workshop: Staff identify 8-12 hours/week lost to repetitive tasks. BOQ checking, render iterations, plant research, meeting notes - all AI-automatable within 6 months.' },
   { num: 8, title: 'The Bottom-Up Approach', body: 'Awareness > Urgency > Responsibility. Staff understand why - they feel the cost of not changing - they take ownership. Not top-down mandates - bottom-up participation.' },
   { num: 9, title: 'CPG AI Tools Roadmap', body: 'Phase 1 (Now): Microsoft Copilot for all staff. Phase 2 (Q3 2026): Sandbox for Midjourney, Veras, Forma. Phase 3 (Q1 2027): Custom AI agents for BIM & QS workflows.' },

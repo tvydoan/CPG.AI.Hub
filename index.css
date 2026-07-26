@@ -87,7 +87,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 ══════════════════════════════ */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(6,6,6,05);
+  background: rgba(6,6,6,0.5);
   -webkit-backdrop-filter: blur(24px) saturate(120%);
   backdrop-filter: blur(24px) saturate(120%);
   border-bottom: 1px solid rgba(255,255,255,0.07);

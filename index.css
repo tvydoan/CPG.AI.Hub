@@ -32,7 +32,13 @@
 /* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; font-size: 15px; background: #08080a; }
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+  background: #08080a;
+  margin: 0; padding: 0;
+  overflow-x: hidden;
+}
 
 body {
   background: #08080a;
@@ -42,6 +48,7 @@ body {
   -webkit-font-smoothing: antialiased;
   margin: 0; padding: 0;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .page-bg {
@@ -1383,33 +1390,27 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .slide-info p  { font-size: 0.75rem; color: #6b7280; line-height: 1.55; }
 
 /* ══════════════════════════════
-   FOOTER (100% Full Width Infinite Solid Black)
+   FOOTER (True 100vw Edge-to-Edge Solid Black)
 ══════════════════════════════ */
 .footer {
-  width: 100%;
+  display: block;
+  width: 100vw;
+  min-width: 100vw;
+  margin-left: calc(-50vw + 50%);
   padding: 50px 0 60px;
   background: #08080a !important;
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   position: relative;
   box-sizing: border-box;
-}
-
-/* Infinite solid black extension block to eliminate any bottom white gaps */
-.footer::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: -50vw; right: -50vw;
-  width: 200vw;
-  height: 3000px;
-  background: #08080a !important;
-  pointer-events: none;
-  z-index: 10;
+  overflow: visible;
 }
 .footer-wrap {
   display: flex; justify-content: space-between; align-items: center;
   gap: 20px; flex-wrap: wrap;
+  padding: 0 40px;
+  max-width: 100%;
+  margin: 0;
 }
 .footer-brand { display: flex; align-items: center; gap: 14px; }
 .footer-logo  { height: 36px; width: auto; object-fit: contain; }

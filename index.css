@@ -278,24 +278,18 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 .nav-dd-item {
   display: block;
-  padding: 8px 14px; border-radius: 8px;
-  transition: background 0.2s, transform 0.15s;
+  padding: 10px 16px; border-radius: 8px;
+  font-size: 0.86rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+  white-space: nowrap;
 }
 .nav-dd-item:hover {
   background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   transform: translateX(3px);
 }
-.nav-dd-item div { display: flex; flex-direction: column; }
-.nav-dd-item strong {
-  font-size: 0.84rem; font-weight: 500; color: rgba(255, 255, 255, 0.95);
-  display: block; line-height: 1.35;
-}
-.nav-dd-item span {
-  font-size: 0.71rem; color: rgba(255, 255, 255, 0.52);
-  display: block; margin-top: 2px; line-height: 1.2;
-}
 
-/* Scrolled Dropdown Styling (Clean MAD Light Glass with Grey Subtitle) */
+/* Scrolled Dropdown Styling (Clean MAD Light Glass) */
 .navbar.scrolled .nav-dd-menu {
   background: rgba(255, 255, 255, 0.94) !important;
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
@@ -303,16 +297,13 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
 }
-.navbar.scrolled .nav-dd-item strong {
+.navbar.scrolled .nav-dd-item {
   color: #1a1a1a !important;
   font-weight: 500 !important;
 }
-.navbar.scrolled .nav-dd-item span {
-  color: #6b7280 !important;
-  font-weight: 400 !important;
-}
 .navbar.scrolled .nav-dd-item:hover {
   background: rgba(0, 0, 0, 0.06) !important;
+  color: #000000 !important;
 }
 
 /* ── NAV CTA BUTTONS ── */

@@ -106,14 +106,14 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   position: relative; z-index: 2;
 }
 
-/* ── PURE MAD-STYLE FROSTED GLASS NAVBAR (NO WHITE FOG GRADIENT) ── */
+/* ── PURE MAD-STYLE FROSTED GLASS NAVBAR (NO BORDER LINE) ── */
 .nav-blur {
   position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%;
   z-index: 1; pointer-events: none;
   background: rgba(10, 12, 16, 0.15);
   -webkit-backdrop-filter: blur(36px) saturate(190%);
   backdrop-filter: blur(36px) saturate(190%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .navbar.scrolled .nav-blur {
@@ -121,7 +121,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
   background: rgba(255, 255, 255, 0.30);
   -webkit-backdrop-filter: blur(36px) saturate(190%);
   backdrop-filter: blur(36px) saturate(190%);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: none !important;
 }
 
 /* ── BRAND LOGO (Clean & Borderless) ── */

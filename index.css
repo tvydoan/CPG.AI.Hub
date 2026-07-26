@@ -17,10 +17,10 @@
   --dark-border: rgba(255,255,255,0.1);
 
   /* Light zone (content sections) */
-  --bg:        #f7f7f8;
+  --bg:        #ffffff;
   --bg-alt:    #ffffff;
   --card:      #ffffff;
-  --card-h:    #fafafa;
+  --card-h:    #fcfcfc;
   --border:    rgba(0,0,0,0.08);
   --border-r:  rgba(209,0,0,0.18);
   --text:      #1a1a1a;
@@ -507,7 +507,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .video-cta-note {
   font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 8px;
   border: 1px solid #e5e7eb; border-radius: 8px; padding: 10px 16px;
-  background: #fafafa;
+  background: #ffffff;
 }
 
 /* ── VIDEO LIGHTBOX ── */

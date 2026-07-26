@@ -1381,15 +1381,18 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .slide-info p  { font-size: 0.75rem; color: #6b7280; line-height: 1.55; }
 
 /* ══════════════════════════════
-   FOOTER (100% Full Width Solid Black MAD Style)
+   FOOTER (100% Edge-To-Edge Full Viewport Width Black)
 ══════════════════════════════ */
 .footer {
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%; right: 50%;
+  margin-left: -50vw; margin-right: -50vw;
   padding: 44px 0;
   background: #08080a;
   color: #ffffff;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
+  box-sizing: border-box;
 }
 .footer-wrap {
   display: flex; justify-content: space-between; align-items: center;
@@ -1400,26 +1403,43 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .footer-name  { font-size: 0.95rem; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
 .footer-sub   { font-size: 0.72rem; color: rgba(255, 255, 255, 0.50); margin-top: 2px; }
 
-.footer-nav   { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
-.footer-nav a {
+.footer-nav   { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.footer-nav a:not(.footer-icon-btn) {
   font-size: 0.78rem; font-weight: 400; color: rgba(255, 255, 255, 0.60);
   transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   letter-spacing: 0.02em; text-decoration: none; outline: none !important;
 }
-.footer-nav a:hover { color: #ffffff; }
+.footer-nav a:not(.footer-icon-btn):hover { color: #ffffff; }
+
+/* ── MAD-STYLE ICON BUTTONS (LinkedIn & Website - Matching Screenshot 2) ── */
+.footer-icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff !important; border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.95rem; cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none !important; text-decoration: none;
+}
+.footer-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.40);
+  transform: translateY(-2px);
+  color: #ffffff !important;
+}
 
 /* ── MAD-STYLE BACK TO TOP PILL BUTTON ── */
 .back-to-top {
   display: inline-flex; align-items: center; justify-content: center;
-  width: 32px; height: 42px; border-radius: 9px;
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 32px; height: 36px; border-radius: 9px;
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 1.1rem; font-weight: 300; cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-left: 8px; outline: none !important;
+  margin-left: 4px; outline: none !important;
 }
 .back-to-top:hover {
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.25);
   border-color: rgba(255, 255, 255, 0.40);
   transform: translateY(-2px);
   color: #ffffff;

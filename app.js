@@ -20,6 +20,14 @@ function initNav() {
     links.classList.toggle('open');
   });
 
+  // ── Back to Top button ──
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   // ── Click-toggle dropdowns (fixes hover-gap bug) ──
   const dropdowns = document.querySelectorAll('.nav-dropdown');
 

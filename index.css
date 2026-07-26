@@ -220,38 +220,42 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .nav-link.c-gold:hover { color: var(--gold-lt); }
 
 /* Scrolled Nav Link Styling (MAD style black text on translucent light rectangle boxes) */
+/* Remove all black focus rings & borders */
+button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-visible {
+  outline: none !important;
+}
+
 .navbar.scrolled .nav-link {
   color: #1a1a1a;
   font-weight: 400;
   border-radius: 8px;
   background: rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border: 1px solid transparent !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 .navbar.scrolled .nav-link:hover {
   color: #000000;
   background: rgba(0, 0, 0, 0.1);
-  border-color: rgba(0, 0, 0, 0.14);
+  border-color: transparent !important;
 }
 .navbar.scrolled .nav-link.active {
-  color: #ffffff;
-  background: var(--red);
-  border-color: var(--red);
+  color: #ffffff !important;
+  background: var(--red) !important;
+  border-color: var(--red) !important;
 }
 
-/* ── DROPDOWNS ── */
+/* ── DROPDOWNS (MAD Architects Style - Clean & Iconless) ── */
 .nav-dropdown { position: relative; display: flex; align-items: center; }
 .nav-dd-trigger { display: inline-flex; align-items: center; gap: 6px; }
 
 .nav-dd-menu {
-  display: none; position: absolute; top: calc(100% + 10px); left: 0;
-  background: rgba(18, 18, 22, 0.95);
+  display: none; position: absolute; top: calc(100% + 8px); left: 0;
+  background: rgba(22, 24, 28, 0.94);
   -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 14px; padding: 8px; min-width: 230px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px; padding: 6px; min-width: 190px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
   z-index: 999;
-  /* Bridge the gap so mouse can travel without losing hover */
   margin-top: -4px;
 }
 .nav-dd-menu.open { display: flex; flex-direction: column; animation: ddFadeIn 0.2s ease forwards; }
@@ -262,28 +266,43 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 }
 
 .nav-dd-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 10px 14px; border-radius: 9px;
+  display: block;
+  padding: 8px 14px; border-radius: 8px;
   transition: background 0.2s, transform 0.15s;
 }
-.nav-dd-item:hover { background: rgba(255,255,255,0.08); transform: translateX(2px); }
-.nav-dd-item > i { margin-top: 3px; color: var(--gold); font-size: 0.88rem; width: 16px; }
+.nav-dd-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(3px);
+}
 .nav-dd-item div { display: flex; flex-direction: column; }
-.nav-dd-item strong { font-size: 0.82rem; font-weight: 600; color: #ffffff; }
-.nav-dd-item span { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+.nav-dd-item strong {
+  font-size: 0.84rem; font-weight: 500; color: rgba(255, 255, 255, 0.95);
+  display: block; line-height: 1.35;
+}
+.nav-dd-item span {
+  font-size: 0.71rem; color: rgba(255, 255, 255, 0.52);
+  display: block; margin-top: 2px; line-height: 1.2;
+}
 
-/* Scrolled Dropdown Styling (White Frosted Glass Popup with Dark Text) */
+/* Scrolled Dropdown Styling (Clean MAD Light Glass with Grey Subtitle) */
 .navbar.scrolled .nav-dd-menu {
-  background: rgba(255, 255, 255, 0.96) !important;
-  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12) !important;
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
 }
-.navbar.scrolled .nav-dd-item strong { color: #111111 !important; }
-.navbar.scrolled .nav-dd-item span { color: #6b7280 !important; }
-.navbar.scrolled .nav-dd-item > i { color: var(--red) !important; }
-.navbar.scrolled .nav-dd-item:hover { background: rgba(0, 0, 0, 0.06) !important; }
+.navbar.scrolled .nav-dd-item strong {
+  color: #1a1a1a !important;
+  font-weight: 500 !important;
+}
+.navbar.scrolled .nav-dd-item span {
+  color: #6b7280 !important;
+  font-weight: 400 !important;
+}
+.navbar.scrolled .nav-dd-item:hover {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
 
 /* ── NAV CTA BUTTONS ── */
 .nav-cta { display: flex; align-items: center; gap: 8px; margin-left: auto; }

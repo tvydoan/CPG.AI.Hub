@@ -116,21 +116,28 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 }
 
 /* ── PURE MAD-STYLE FROSTED GLASS NAVBAR (NO BORDER LINE) ── */
-/* ── PURE MAD-STYLE FROSTED GLASS NAVBAR (HIGH SEE-THROUGH VISIBILITY) ── */
+/* Blur fades out gradually instead of stopping in a hard rectangle,
+   so the navbar blends into the page content behind it, like MAD's site. */
 .nav-blur {
-  position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%;
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 140px; /* extends past the visible bar so the blur has room to fade out */
   z-index: 1; pointer-events: none;
-  background: rgba(10, 12, 16, 0.08);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
-  backdrop-filter: blur(12px) saturate(160%);
+  background: linear-gradient(to bottom, rgba(10,12,16,0.22) 0%, rgba(10,12,16,0.10) 45%, rgba(10,12,16,0) 100%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 92%);
+  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 92%);
   border-bottom: none !important;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .navbar.scrolled .nav-blur {
   opacity: 1;
+  height: 100%;
   background: rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(12px) saturate(160%);
   backdrop-filter: blur(12px) saturate(160%);
+  -webkit-mask-image: none;
+  mask-image: none;
   border-bottom: none !important;
 }
 
@@ -448,6 +455,19 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   background: #f3f4f6; color: #6b7280;
   border: 1px solid #e5e7eb;
 }
+
+.core-def-box {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(209,0,0,0.04); border: 1px solid rgba(209,0,0,0.18);
+  border-radius: 12px; padding: 16px 18px; margin-bottom: 20px;
+}
+.core-def-icon {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: rgba(209,0,0,0.12); color: var(--red);
+  display: flex; align-items: center; justify-content: center; font-size: 0.8rem;
+}
+.core-def-box p { font-size: 0.84rem; color: var(--text); line-height: 1.65; margin: 0; }
+.core-def-box strong { color: var(--red); }
 
 /* Metaphor card */
 .metaphor-card {
@@ -850,13 +870,13 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   position: absolute;
   bottom: 20px; right: 20px;
   width: 320px;
-  background: rgba(18, 22, 32, 0.60);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(18, 22, 32, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 16px;
   padding: 20px;
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   z-index: 15;
   color: #fff;
   transition: all 0.3s;
@@ -1286,6 +1306,28 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
   cursor: pointer; transition: background 0.2s, box-shadow 0.2s;
 }
 .btn-submit-full:hover { background: var(--red-lt); box-shadow: 0 0 20px rgba(209,0,0,0.3); }
+
+/* Quick-select chips for the bottleneck field */
+.quick-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.quick-chip {
+  padding: 5px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 600;
+  background: #f9fafb; color: var(--muted); border: 1px solid #e5e7eb;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.quick-chip:hover, .quick-chip.chip-selected { background: var(--red); color: #fff; border-color: var(--red); }
+
+/* Collapsible "extra details" section, keeps the form short by default */
+.extra-toggle {
+  display: flex; align-items: center; gap: 8px; width: 100%;
+  background: transparent; border: 1px dashed #e5e7eb; border-radius: 8px;
+  padding: 9px 12px; margin-bottom: 14px;
+  font-size: 0.78rem; font-weight: 600; color: var(--muted);
+  cursor: pointer; transition: all 0.2s; font-family: var(--font);
+}
+.extra-toggle:hover { border-color: var(--red); color: var(--red); }
+.extra-toggle i { transition: transform 0.2s; font-size: 0.7rem; }
+.extra-toggle.open i { transform: rotate(45deg); }
+.extra-fields.hidden { display: none; }
 
 /* feed */
 .feed-panel {

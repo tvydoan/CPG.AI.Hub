@@ -1461,8 +1461,8 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 /* ── VERTICAL SCROLL PROGRESS INDICATOR (MAD Style) ── */
 .scroll-progress-track {
-  position: fixed; right: 18px; top: 50%; transform: translateY(-50%);
-  width: 4px; height: 110px; border-radius: 4px;
+  position: fixed; left: 6px; top: 50%; transform: translateY(-50%);
+  width: 3px; height: 110px; border-radius: 4px;
   background: rgba(0, 0, 0, 0.12);
   z-index: 99; pointer-events: none;
   overflow: hidden;

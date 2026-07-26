@@ -85,7 +85,7 @@
       </p>
 
       <div class="hero-btns">
-        <a href="#quick-learns" class="btn-primary"><i class="fa-solid fa-play"></i> Watch 1-min videos</a>
+        <a href="#quick-learns" class="btn-primary" id="heroWatchBtn"><i class="fa-solid fa-play"></i> Watch 1-min videos</a>
         <a href="#what-is-ai" class="btn-ghost-lg"><i class="fa-solid fa-book-open"></i> Start learning</a>
       </div>
 
@@ -110,6 +110,11 @@
           <h2>What is AI, really?</h2>
           <p class="section-sub">No tech jargon. Just plain language.</p>
         </div>
+      </div>
+
+      <div class="core-def-box">
+        <div class="core-def-icon"><i class="fa-solid fa-circle-info"></i></div>
+        <p><strong>In one sentence:</strong> AI is software trained on huge amounts of data so it can recognize patterns and use them to answer questions, generate content, or complete tasks, similar to how a person learns from experience, but much faster and at a much bigger scale. Today's AI is "narrow" AI: very good at specific tasks, not a general thinking machine like in movies.</p>
       </div>
 
       <div class="cards-3">
@@ -307,7 +312,7 @@
       <div class="section-head-row">
         <div>
           <h2>AI agents are built in layers</h2>
-          <p class="section-sub">Like floors in a building — fixed core at the bottom, flexible tools at the top. Click any layer to learn what it does.</p>
+          <p class="section-sub">Also called <strong>AIOS</strong> (Agentic Operating System). Like floors in a building — fixed core at the bottom, flexible tools at the top. Click any layer to learn what it does.</p>
         </div>
       </div>
 
@@ -450,6 +455,13 @@
 
             <div class="fgroup">
               <label for="bottleneck">What task takes too much time? <span class="label-hint">(be specific)</span></label>
+              <div class="quick-chip-row" id="bottleneckChips">
+                <button type="button" class="quick-chip" data-text="Manually re-typing or copying information between documents and systems.">Manual data entry</button>
+                <button type="button" class="quick-chip" data-text="Manually comparing drawings, specs, or documents to check for mismatches.">Comparing documents</button>
+                <button type="button" class="quick-chip" data-text="Writing reports, meeting minutes, or summaries by hand.">Writing reports</button>
+                <button type="button" class="quick-chip" data-text="Repetitive design or drafting tasks that take up creative time.">Repetitive design tasks</button>
+                <button type="button" class="quick-chip" data-text="Searching for information across files, emails, or folders.">Searching for information</button>
+              </div>
               <textarea id="bottleneck" rows="3" placeholder="e.g. Every project, I spend 12 hours manually comparing room sizes in PDF drawings against the client's spec sheet." required></textarea>
             </div>
 
@@ -458,13 +470,16 @@
               <textarea id="aiIdea" rows="3" placeholder="e.g. I'd love a tool that reads both documents and highlights where the numbers don't match."></textarea>
             </div>
 
-            <div class="form-row-2">
+            <button type="button" class="extra-toggle" id="extraToggleBtn">
+              <i class="fa-solid fa-plus"></i> Add extra details <span class="label-hint">(optional, helps us prioritize)</span>
+            </button>
+            <div class="form-row-2 extra-fields hidden" id="extraFields">
               <div class="fgroup">
-                <label for="hoursSaved">Roughly how many hours per week does this task take?</label>
+                <label for="hoursSaved">Roughly how many hours per week does this task take? <span class="label-hint">(optional)</span></label>
                 <input id="hoursSaved" type="number" min="1" max="40" placeholder="e.g. 10">
               </div>
               <div class="fgroup">
-                <label for="securityLevel">Data type involved</label>
+                <label for="securityLevel">Data type involved <span class="label-hint">(optional)</span></label>
                 <select id="securityLevel">
                   <option>Public / general info</option>
                   <option>Internal CPG data</option>

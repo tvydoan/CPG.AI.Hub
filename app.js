@@ -697,12 +697,42 @@ function initTimeline() {
     `;
   }
 
+  // Ordered list of eras, used for keyboard next/previous navigation
+  const ERA_KEYS = ['1950', '1980', '2000', '2010', '2020', 'future'];
+  let currentEraIndex = 0;
+
   // Click handlers on years, pins, titles
   const clickables = document.querySelectorAll('.tyear-item, .tpin-node, .ttitle-item');
   clickables.forEach(el => {
     el.addEventListener('click', () => {
       selectEra(el.dataset.year);
+      currentEraIndex = ERA_KEYS.indexOf(String(el.dataset.year));
     });
+  });
+
+  // Keyboard navigation: ArrowRight = next era, ArrowLeft = previous era.
+  // Only active while the timeline section is visible on screen, and never
+  // while the user is typing into a form field elsewhere on the page.
+  const timelineSection = document.getElementById('timeline');
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+
+    const activeTag = document.activeElement.tagName;
+    if (activeTag === 'INPUT' || activeTag === 'TEXTAREA' || activeTag === 'SELECT') return;
+
+    if (timelineSection) {
+      const rect = timelineSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (!isVisible) return;
+    }
+
+    e.preventDefault();
+    if (e.key === 'ArrowRight') {
+      currentEraIndex = Math.min(currentEraIndex + 1, ERA_KEYS.length - 1);
+    } else {
+      currentEraIndex = Math.max(currentEraIndex - 1, 0);
+    }
+    selectEra(ERA_KEYS[currentEraIndex]);
   });
 
   selectEra('1950');

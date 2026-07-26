@@ -1381,19 +1381,38 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 .slide-info p  { font-size: 0.75rem; color: #6b7280; line-height: 1.55; }
 
 /* ══════════════════════════════
-   FOOTER
+   FOOTER (MAD Architects Black Style)
 ══════════════════════════════ */
 .footer {
-  padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.07);
-  background: var(--dark-bg);
+  padding: 44px 0;
+  background: #08080a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
 }
 .footer-wrap { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
-.footer-brand { display: flex; align-items: center; gap: 12px; }
-.footer-name  { font-size: 0.92rem; font-weight: 700; color: #fff; }
-.footer-sub   { font-size: 0.7rem; color: rgba(255,255,255,0.4); }
-.footer-nav   { display: flex; gap: 16px; flex-wrap: wrap; }
-.footer-nav a { font-size: 0.78rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
-.footer-nav a:hover { color: #fff; }
+.footer-brand { display: flex; align-items: center; gap: 14px; }
+.footer-name  { font-size: 0.95rem; font-weight: 700; color: #ffffff; letter-spacing: -0.01em; }
+.footer-sub   { font-size: 0.72rem; color: rgba(255, 255, 255, 0.45); margin-top: 2px; }
+.footer-nav   { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.footer-nav a { font-size: 0.78rem; font-weight: 400; color: rgba(255, 255, 255, 0.55); transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1); letter-spacing: 0.02em; }
+.footer-nav a:hover { color: #ffffff; }
+
+/* ── MAD-STYLE BACK TO TOP PILL BUTTON ── */
+.back-to-top {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 42px; border-radius: 9px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 1.1rem; font-weight: 300; cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-left: 8px; outline: none !important;
+}
+.back-to-top:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  color: #ffffff;
+}
 
 /* ══════════════════════════════
    RESPONSIVE

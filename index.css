@@ -94,7 +94,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 
 .navbar.scrolled {
   padding: 10px 0 24px 0;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.65) 0%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 100%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
   border-bottom: none !important;
@@ -121,7 +121,7 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 }
 .navbar.scrolled .nav-blur {
   opacity: 1;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.25) 60%, rgba(255, 255, 255, 0) 100%);
 }
 
 .nav-blur > div { position: absolute; inset: 0; }
@@ -271,6 +271,18 @@ h1, h2, h3 { font-weight: 700; line-height: 1.25; }
 .nav-dd-item div { display: flex; flex-direction: column; }
 .nav-dd-item strong { font-size: 0.82rem; font-weight: 600; color: #ffffff; }
 .nav-dd-item span { font-size: 0.72rem; color: rgba(255,255,255,0.5); }
+
+/* Scrolled Dropdown Styling (White Frosted Glass Popup with Dark Text) */
+.navbar.scrolled .nav-dd-menu {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+.navbar.scrolled .nav-dd-item strong { color: #111111; }
+.navbar.scrolled .nav-dd-item span { color: #6b7280; }
+.navbar.scrolled .nav-dd-item:hover { background: rgba(0, 0, 0, 0.05); }
 
 /* ── NAV CTA BUTTONS ── */
 .nav-cta { display: flex; align-items: center; gap: 8px; margin-left: auto; }

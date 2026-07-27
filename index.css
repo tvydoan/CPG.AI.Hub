@@ -5574,3 +5574,23 @@ body.premium-editorial #home .hero-stats-row .hstat-div {
   .need-panel-light .need-prompt-box { flex-direction: column; }
   .need-panel-light .need-copy-btn { width: 100%; justify-content: center; }
 }
+
+html[lang="vi"] .hero-h1 {
+  max-width: 980px;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+}
+
+html[lang="vi"] .hero-title-line {
+  display: block;
+  white-space: nowrap;
+}
+@media (max-width: 900px) {
+  html[lang="vi"] .hero-title-line {
+    white-space: normal;
+  }
+
+  html[lang="vi"] .hero-h1 {
+    max-width: 92%;
+    font-size: 2rem;
+  }
+}

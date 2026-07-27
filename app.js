@@ -419,11 +419,6 @@ function drawWorkflowConnectorsV2() {
     setGradient(target.gradient, sourceX, sourceY, target.x, target.y);
   });
 
-  // The shared lead-in segment (source panel → junction) gets its own
-  // gradient mapped across just that short horizontal stretch, so its
-  // travelling highlight moves at the same visual speed as the branches.
-  setGradient('wfTrunkGradient', sourceX, sourceY, junctionX, sourceY);
-
   const f = n => Number(n).toFixed(1);
 
   // Builds one continuous path through a list of waypoints, easing every
@@ -450,63 +445,53 @@ function drawWorkflowConnectorsV2() {
     return d;
   };
 
-  let html = '';
-
   // Each branch gets one smooth, rounded-corner route from the source to
   // its output card: a soft neutral rail, a solid smooth gradient line on
-  // top of it (always fully visible, no dashing — this is what keeps the
-  // line looking clean/"mịn"), and one brighter travelling highlight layered
-  // above that to carry the visible motion. Only one dash pattern exists at
-  // a time on the path, so nothing collides with anything else.
-  targets.forEach((target, index) => {
-    // Full route (kept for the neutral gray rail underneath everything).
-    const routeD = smoothPath([
+  // top of it, and a travelling highlight that runs the ENTIRE route in one
+  // continuous animation — starting at the source panel, passing through
+  // the shared middle (junction) segment, then out to the branch card. The
+  // highlight uses a repeating multi-dash pattern (several short pulses
+  // spaced along the path) rather than a single pulse, so the shared
+  // middle stretch reliably has a pulse passing through it at all times
+  // instead of only briefly at the start of each cycle.
+  //
+  // IMPORTANT paint-order fix: all three branches share the exact same
+  // source→junction segment. Previously each branch appended its
+  // rail+colour+highlight together before moving to the next branch, so
+  // branch #2's plain gray rail was painted ON TOP of branch #1's colour
+  // line along that shared stretch (since SVG paints later elements over
+  // earlier ones) — which is why the middle looked flat gray no matter
+  // what colour/motion was underneath. Fix: draw ALL rails first, then
+  // ALL colour lines, then ALL highlights, so colour and motion are
+  // always the topmost layer everywhere, including the shared segment.
+  const routes = targets.map(target => ({
+    target,
+    d: smoothPath([
       [sourceX, sourceY],
       [junctionX, sourceY],
       [junctionX, target.y],
       [target.x, target.y]
-    ]);
-    // Colour + motion for this branch only run from the junction onward,
-    // since the source→junction stretch now gets its own dedicated
-    // animated segment below (this avoids 3 overlapping colour lines
-    // stacking flatly on top of each other along that shared stretch).
-    const branchD = smoothPath([
-      [junctionX, sourceY],
-      [junctionX, target.y],
-      [target.x, target.y]
-    ]);
-    const gradient = `url(#${target.gradient})`;
+    ])
+  }));
 
+  let html = '';
+  routes.forEach(({ d }) => {
+    html += `<path class="workflow-rail-v2" d="${d}"></path>`;
+  });
+  routes.forEach(({ target, d }) => {
+    html += `<path class="workflow-gradient-line-v2" d="${d}" stroke="url(#${target.gradient})"
+            stroke-dasharray="6 5"></path>`;
+  });
+  routes.forEach(({ target, d }) => {
     html += `
-      <path class="workflow-rail-v2" d="${routeD}"></path>
-      <path class="workflow-gradient-line-v2" d="${branchD}" stroke="${gradient}"
-            stroke-dasharray="6 5"></path>
-      <path class="workflow-flow-highlight-v2" d="${branchD}" pathLength="1" stroke="${gradient}"
-            stroke-dasharray="0.16 0.84" stroke-dashoffset="1">
+      <path class="workflow-flow-highlight-v2" d="${d}" pathLength="1" stroke="url(#${target.gradient})"
+            stroke-dasharray="0.09 0.24" stroke-dashoffset="1">
         <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${target.delay}s"
                  repeatCount="indefinite" calcMode="linear"></animate>
       </path>
     `;
   });
-
-  // Dedicated trunk segment (source panel → junction): the same colour
-  // treatment and travelling highlight as the branch lines, so the
-  // shared lead-in line animates too instead of sitting flat and gray.
-  const trunkD = smoothPath([
-    [sourceX, sourceY],
-    [junctionX, sourceY]
-  ]);
-  html += `
-    <path class="workflow-gradient-line-v2" d="${trunkD}" stroke="url(#wfTrunkGradient)"
-          stroke-dasharray="6 5"></path>
-    <path class="workflow-flow-highlight-v2" d="${trunkD}" pathLength="1" stroke="url(#wfTrunkGradient)"
-          stroke-dasharray="0.4 0.6" stroke-dashoffset="1">
-      <animate attributeName="stroke-dashoffset" from="1" to="0"
-               dur="3.2s" begin="0s"
-               repeatCount="indefinite" calcMode="linear"></animate>
-    </path>
-  `;
 
   // Static junction only; it is not part of the motion effect.
   html += `<circle class="workflow-junction-v2" cx="${f(junctionX)}" cy="${f(sourceY)}" r="4.2"></circle>`;

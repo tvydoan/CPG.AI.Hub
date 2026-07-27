@@ -1503,7 +1503,7 @@ button, button:focus, button:focus-visible, .nav-link:focus, .nav-link:focus-vis
 
 /* ── VERTICAL SCROLL PROGRESS INDICATOR (MAD Style) ── */
 .scroll-progress-track {
-  position: fixed; left: 20px; top: 50%; transform: translateY(-50%);
+  position: fixed; left: 30px; top: 50%; transform: translateY(-50%);
   width: 3px; height: 110px; border-radius: 4px;
   background: rgba(0, 0, 0, 0.12);
   z-index: 99; pointer-events: none;
@@ -5005,4 +5005,20 @@ body.premium-editorial .manager-tool-stack-v2 span {
   grid-column: 2;
   grid-row: 1;
   min-width: 0;
+}
+
+/* Keep gradient background behind the text */
+body.premium-editorial #timelineDisplay {
+  position: relative;
+  isolation: isolate;
+}
+
+body.premium-editorial #timelineDisplay::before,
+body.premium-editorial #timelineDisplay::after {
+  z-index: 0 !important;
+}
+
+body.premium-editorial #timelineDisplay > * {
+  position: relative;
+  z-index: 1;
 }

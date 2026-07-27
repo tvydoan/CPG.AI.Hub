@@ -448,10 +448,11 @@ function drawWorkflowConnectorsV2() {
   let html = '';
 
   // Each branch gets one smooth, rounded-corner route from the source to
-  // its output card: a soft neutral rail underneath, and a single fine
-  // dashed gradient line on top that flows continuously. Using just one
-  // dash pattern (instead of layering several different dash sizes on the
-  // same path) avoids the dashes visually colliding with each other.
+  // its output card: a soft neutral rail, a solid smooth gradient line on
+  // top of it (always fully visible, no dashing — this is what keeps the
+  // line looking clean/"mịn"), and one brighter travelling highlight layered
+  // above that to carry the visible motion. Only one dash pattern exists at
+  // a time on the path, so nothing collides with anything else.
   targets.forEach((target, index) => {
     const routeD = smoothPath([
       [sourceX, sourceY],
@@ -463,9 +464,11 @@ function drawWorkflowConnectorsV2() {
 
     html += `
       <path class="workflow-rail-v2" d="${routeD}"></path>
-      <path class="workflow-gradient-line-v2" d="${routeD}" pathLength="1" stroke="${gradient}"
-            stroke-dasharray="0.008 0.007" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" from="0" to="-0.015"
+      <path class="workflow-gradient-line-v2" d="${routeD}" stroke="${gradient}"
+            stroke-dasharray="6 5"></path>
+      <path class="workflow-flow-highlight-v2" d="${routeD}" pathLength="1" stroke="${gradient}"
+            stroke-dasharray="0.16 0.84" stroke-dashoffset="1">
+        <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${target.delay}s"
                  repeatCount="indefinite" calcMode="linear"></animate>
       </path>

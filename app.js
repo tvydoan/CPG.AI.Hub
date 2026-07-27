@@ -448,10 +448,10 @@ function drawWorkflowConnectorsV2() {
   let html = '';
 
   // Each branch gets one smooth, rounded-corner route from the source to
-  // its output card. The same route is drawn three times: a soft neutral
-  // rail underneath, a continuously visible gradient line on top of it
-  // (this is the smoother "always on" gradient look), and a brighter
-  // travelling highlight for motion. No circles are added along the line.
+  // its output card: a soft neutral rail underneath, and a single fine
+  // dashed gradient line on top that flows continuously. Using just one
+  // dash pattern (instead of layering several different dash sizes on the
+  // same path) avoids the dashes visually colliding with each other.
   targets.forEach((target, index) => {
     const routeD = smoothPath([
       [sourceX, sourceY],
@@ -459,30 +459,14 @@ function drawWorkflowConnectorsV2() {
       [junctionX, target.y],
       [target.x, target.y]
     ]);
-    const begin = `${target.delay}s`;
     const gradient = `url(#${target.gradient})`;
-    const routeClass = `workflow-flow-route-v2 workflow-flow-route-${index + 1}-v2`;
 
     html += `
       <path class="workflow-rail-v2" d="${routeD}"></path>
       <path class="workflow-gradient-line-v2" d="${routeD}" pathLength="1" stroke="${gradient}"
-            stroke-dasharray="0.05 0.045" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" from="0" to="-0.095"
-                 dur="1.6s" begin="${target.delay * 0.4}s"
-                 repeatCount="indefinite" calcMode="linear"></animate>
-      </path>
-      <path class="${routeClass} workflow-flow-glow-v2"
-            d="${routeD}" pathLength="1" stroke="${gradient}"
-            stroke-dasharray="0.20 0.80" stroke-dashoffset="1">
-        <animate attributeName="stroke-dashoffset" from="1" to="0"
-                 dur="${target.duration}s" begin="${begin}"
-                 repeatCount="indefinite" calcMode="linear"></animate>
-      </path>
-      <path class="${routeClass} workflow-flow-core-v2"
-            d="${routeD}" pathLength="1" stroke="${gradient}"
-            stroke-dasharray="0.14 0.86" stroke-dashoffset="1">
-        <animate attributeName="stroke-dashoffset" from="1" to="0"
-                 dur="${target.duration}s" begin="${begin}"
+            stroke-dasharray="0.008 0.007" stroke-dashoffset="0">
+        <animate attributeName="stroke-dashoffset" from="0" to="-0.015"
+                 dur="${target.duration}s" begin="${target.delay}s"
                  repeatCount="indefinite" calcMode="linear"></animate>
       </path>
     `;

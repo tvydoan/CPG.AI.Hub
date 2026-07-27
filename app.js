@@ -501,9 +501,9 @@ function drawWorkflowConnectorsV2() {
     <path class="workflow-gradient-line-v2" d="${trunkD}" stroke="url(#wfTrunkGradient)"
           stroke-dasharray="6 5"></path>
     <path class="workflow-flow-highlight-v2" d="${trunkD}" pathLength="1" stroke="url(#wfTrunkGradient)"
-          stroke-dasharray="0.28 0.72" stroke-dashoffset="1">
+          stroke-dasharray="0.4 0.6" stroke-dashoffset="1">
       <animate attributeName="stroke-dashoffset" from="1" to="0"
-               dur="2.4s" begin="0s"
+               dur="3.2s" begin="0s"
                repeatCount="indefinite" calcMode="linear"></animate>
     </path>
   `;

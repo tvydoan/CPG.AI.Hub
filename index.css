@@ -5575,22 +5575,49 @@ body.premium-editorial #home .hero-stats-row .hstat-div {
   .need-panel-light .need-copy-btn { width: 100%; justify-content: center; }
 }
 
-html[lang="vi"] .hero-h1 {
-  max-width: 980px;
-  font-size: clamp(2rem, 4.2vw, 3.4rem);
+/* FIX HERO VI — căn chính giữa màn hình */
+html[lang="vi"] #home .container {
+  width: 100%;
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  transform: none;
+translate: 28px 0;
 }
 
-html[lang="vi"] .hero-title-line {
+html[lang="vi"] #home .hero-h1 {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: clamp(2rem, 4.15vw, 3.4rem);
+  line-height: 1.18;
+}
+
+html[lang="vi"] #home .hero-title-line {
   display: block;
+  width: 100%;
+  text-align: center;
   white-space: nowrap;
 }
+
+html[lang="vi"] #home .hero-sub,
+html[lang="vi"] #home .hero-btns,
+html[lang="vi"] #home .hero-needs {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media (max-width: 900px) {
-  html[lang="vi"] .hero-title-line {
+  html[lang="vi"] #home .hero-title-line {
     white-space: normal;
   }
 
-  html[lang="vi"] .hero-h1 {
-    max-width: 92%;
+  html[lang="vi"] #home .hero-h1 {
+    max-width: 94vw;
     font-size: 2rem;
   }
 }

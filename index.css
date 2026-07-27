@@ -5133,26 +5133,22 @@ body.premium-editorial #home.hero::after {
 }
 
 /* Headline trượt lên nhẹ khi trang vừa mở */
-body.premium-editorial #home .hero-title-line {
-  display: block;
+#home .hero-h1 {
   opacity: 0;
-  transform: translate3d(0, 13px, 0);
-  animation: homeHeadlineReveal 0.78s cubic-bezier(.22, 1, .36, 1) forwards;
+  transform: translateY(16px);
+  animation: heroHeadlineUp 0.9s cubic-bezier(.22, 1, .36, 1) 0.12s both;
   will-change: opacity, transform;
 }
 
-body.premium-editorial #home .hero-title-line:nth-child(1) {
-  animation-delay: 0.08s;
-}
+@keyframes heroHeadlineUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
 
-body.premium-editorial #home .hero-title-line:nth-child(2) {
-  animation-delay: 0.20s;
-}
-
-@keyframes homeHeadlineReveal {
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 

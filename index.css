@@ -4968,8 +4968,8 @@ body.premium-editorial .workflow-gradient-line-v2 {
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2;
-  opacity: .8;
+  stroke-width: 1.8;
+  opacity: .85;
   filter: url(#wfSoftGlow);
   pointer-events: none;
 }

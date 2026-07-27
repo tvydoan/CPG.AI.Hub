@@ -4960,27 +4960,18 @@ body.premium-editorial .workflow-flow-route-v2 {
   stroke-linejoin: round;
   pointer-events: none;
 }
-/* The gradient line itself now flows continuously (small tiled dash pattern
-   animated via SMIL in app.js) so motion is visible along the whole route
-   at all times, not just during the brighter travelling highlight. */
+/* The gradient line flows continuously via a single fine dash pattern
+   animated in app.js (SMIL). Only one dash size is used on the path so
+   nothing visually collides or overlaps into mismatched chunks. */
 body.premium-editorial .workflow-gradient-line-v2 {
   fill: none;
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2.2;
-  opacity: .65;
-  pointer-events: none;
-}
-body.premium-editorial .workflow-flow-glow-v2 {
-  stroke-width: 6;
-  opacity: .20;
+  stroke-width: 2;
+  opacity: .8;
   filter: url(#wfSoftGlow);
-}
-body.premium-editorial .workflow-flow-core-v2 {
-  stroke-width: 2.4;
-  opacity: .9;
-  filter: none;
+  pointer-events: none;
 }
 body.premium-editorial .workflow-junction-v2 {
   fill: #fff;

@@ -425,7 +425,16 @@ function drawWorkflowConnectorsV2() {
   // interior corner into a short quadratic curve instead of a hard right
   // angle. This is what gives the line its smooth, rounded-elbow look.
   const CORNER_RADIUS = 15;
-  const smoothPath = points => {
+  const smoothPath = rawPoints => {
+    // Drop consecutive duplicate waypoints first. This matters for the
+    // middle branch (02), whose card sits at the same height as the
+    // source panel: its route is a single straight line with no actual
+    // turn, so the junction waypoint and the "turn toward target" waypoint
+    // land on the exact same coordinate. Feeding that duplicate into the
+    // corner-rounding math below produced a zero-length curve sitting
+    // exactly at the junction, which broke rendering of everything past
+    // it for that branch (the gray stub the middle line "vẫn bị chặn").
+    const points = rawPoints.filter((p, i) => i === 0 || Math.hypot(p[0] - rawPoints[i - 1][0], p[1] - rawPoints[i - 1][1]) > 0.01);
     let d = `M ${f(points[0][0])} ${f(points[0][1])}`;
     for (let i = 1; i < points.length - 1; i++) {
       const [x0, y0] = points[i - 1];
@@ -447,13 +456,11 @@ function drawWorkflowConnectorsV2() {
 
   // Each branch gets one smooth, rounded-corner route from the source to
   // its output card: a soft neutral rail, a solid smooth gradient line on
-  // top of it, and a travelling highlight that runs the ENTIRE route in one
-  // continuous animation — starting at the source panel, passing through
-  // the shared middle (junction) segment, then out to the branch card. The
-  // highlight uses a repeating multi-dash pattern (several short pulses
-  // spaced along the path) rather than a single pulse, so the shared
-  // middle stretch reliably has a pulse passing through it at all times
-  // instead of only briefly at the start of each cycle.
+  // top of it, and one travelling highlight that runs the ENTIRE route in
+  // one continuous animation — starting at the source panel, passing
+  // through the shared middle (junction) segment, then out to the branch
+  // card — so motion always visibly originates from the source, not the
+  // middle.
   //
   // IMPORTANT paint-order fix: all three branches share the exact same
   // source→junction segment. Previously each branch appended its
@@ -485,7 +492,7 @@ function drawWorkflowConnectorsV2() {
   routes.forEach(({ target, d }) => {
     html += `
       <path class="workflow-flow-highlight-v2" d="${d}" pathLength="1" stroke="url(#${target.gradient})"
-            stroke-dasharray="0.09 0.24" stroke-dashoffset="1">
+            stroke-dasharray="0.22 0.78" stroke-dashoffset="1">
         <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${target.delay}s"
                  repeatCount="indefinite" calcMode="linear"></animate>

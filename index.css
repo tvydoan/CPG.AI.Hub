@@ -5119,3 +5119,270 @@ body.premium-editorial .manager-opportunities-panel::before {
   display: none !important;
   content: none !important;
 }
+
+/* =========================================================
+   HOME ONLY — QUIET MATTE GLASS
+   Chỉ ảnh hưởng section #home, không ảnh hưởng workflow
+========================================================= */
+
+/* Không thêm blob, hình hoặc ánh sáng trang trí vào background */
+body.premium-editorial #home.hero::before,
+body.premium-editorial #home.hero::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Headline trượt lên nhẹ khi trang vừa mở */
+body.premium-editorial #home .hero-title-line {
+  display: block;
+  opacity: 0;
+  transform: translate3d(0, 13px, 0);
+  animation: homeHeadlineReveal 0.78s cubic-bezier(.22, 1, .36, 1) forwards;
+  will-change: opacity, transform;
+}
+
+body.premium-editorial #home .hero-title-line:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+body.premium-editorial #home .hero-title-line:nth-child(2) {
+  animation-delay: 0.20s;
+}
+
+@keyframes homeHeadlineReveal {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Chỉ giữ motion headline, bỏ chấm nhấp nháy */
+body.premium-editorial #home .dot {
+  animation: none !important;
+}
+
+/* Glass chung cho hai nút và khung thông tin */
+body.premium-editorial #home .btn-primary,
+body.premium-editorial #home .btn-ghost-lg,
+body.premium-editorial #home .hero-stats-row {
+  position: relative;
+  overflow: hidden;
+
+  -webkit-backdrop-filter: blur(16px) saturate(118%);
+  backdrop-filter: blur(16px) saturate(118%);
+
+  border: 1px solid rgba(255, 255, 255, 0.14);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.025),
+    0 9px 22px rgba(0, 0, 0, 0.20);
+}
+
+/* Highlight rất nhẹ trên mặt glass */
+body.premium-editorial #home .btn-primary::before,
+body.premium-editorial #home .btn-ghost-lg::before,
+body.premium-editorial #home .hero-stats-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.085) 0%,
+    rgba(255, 255, 255, 0.022) 44%,
+    rgba(255, 255, 255, 0) 72%
+  ) !important;
+
+  opacity: 0.7;
+}
+
+/* Nút đỏ chính — matte red glass */
+body.premium-editorial #home .btn-primary {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(214, 0, 0, 0.92),
+      rgba(169, 0, 0, 0.85)
+    ) !important;
+
+  border-color: rgba(255, 105, 105, 0.30) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.17),
+    inset 0 -1px 0 rgba(75, 0, 0, 0.24),
+    0 9px 22px rgba(0, 0, 0, 0.22) !important;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease !important;
+}
+
+body.premium-editorial #home .btn-primary:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0) 50%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(224, 7, 7, 0.94),
+      rgba(180, 0, 0, 0.87)
+    ) !important;
+
+  border-color: rgba(255, 125, 115, 0.38) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.19),
+    0 10px 23px rgba(0, 0, 0, 0.23) !important;
+
+  transform: none !important;
+}
+
+/* Khi click thì ửng đỏ–cam–vàng nhẹ */
+body.premium-editorial #home .btn-primary:active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0) 52%
+    ),
+    linear-gradient(
+      110deg,
+      rgba(215, 0, 0, 0.96),
+      rgba(236, 62, 10, 0.90) 62%,
+      rgba(244, 169, 0, 0.64)
+    ) !important;
+
+  border-color: rgba(255, 155, 90, 0.45) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    inset 0 0 14px rgba(255, 143, 35, 0.08),
+    0 7px 17px rgba(0, 0, 0, 0.21) !important;
+
+  transform: none !important;
+}
+
+/* Nút Start learning — charcoal matte glass */
+body.premium-editorial #home .btn-ghost-lg {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.065),
+      rgba(255, 255, 255, 0.015) 55%
+    ),
+    rgba(24, 24, 27, 0.60) !important;
+
+  color: rgba(255, 255, 255, 0.70) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 9px 22px rgba(0, 0, 0, 0.20) !important;
+
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    color 0.18s ease !important;
+}
+
+body.premium-editorial #home .btn-ghost-lg:hover {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.078),
+      rgba(255, 255, 255, 0.018) 55%
+    ),
+    rgba(29, 29, 32, 0.66) !important;
+
+  color: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.21) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 10px 23px rgba(0, 0, 0, 0.21) !important;
+
+  transform: none !important;
+}
+
+/* Nút phụ ửng màu rất nhẹ khi click */
+body.premium-editorial #home .btn-ghost-lg:active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.07),
+      rgba(255, 255, 255, 0.015) 55%
+    ),
+    linear-gradient(
+      120deg,
+      rgba(62, 21, 21, 0.68),
+      rgba(46, 32, 20, 0.64)
+    ) !important;
+
+  color: #ffffff !important;
+  border-color: rgba(255, 120, 70, 0.28) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.13),
+    inset 0 0 13px rgba(255, 92, 28, 0.06),
+    0 7px 17px rgba(0, 0, 0, 0.20) !important;
+
+  transform: none !important;
+}
+
+/* Khung 4 thông tin — giữ nguyên layout, không thêm icon */
+body.premium-editorial #home .hero-stats-row {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.058),
+      rgba(255, 255, 255, 0.015) 60%
+    ),
+    rgba(18, 18, 20, 0.54) !important;
+
+  border-radius: 12px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.11),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 10px 26px rgba(0, 0, 0, 0.20) !important;
+}
+
+/* Không làm từng ô nhảy hoặc sáng lên */
+body.premium-editorial #home .hero-stats-row .hstat,
+body.premium-editorial #home .hero-stats-row .hstat:hover {
+  background: transparent !important;
+  transform: none !important;
+}
+
+/* Divider mảnh, sạch */
+body.premium-editorial #home .hero-stats-row .hstat-div {
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.11) 18%,
+    rgba(255, 255, 255, 0.11) 82%,
+    transparent
+  ) !important;
+}
+
+/* Hạn chế motion khi thiết bị bật Reduce Motion */
+@media (prefers-reduced-motion: reduce) {
+  body.premium-editorial #home .hero-title-line {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

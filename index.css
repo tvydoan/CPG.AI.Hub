@@ -4960,15 +4960,27 @@ body.premium-editorial .workflow-flow-route-v2 {
   stroke-linejoin: round;
   pointer-events: none;
 }
+/* The gradient line itself now flows continuously (small tiled dash pattern
+   animated via SMIL in app.js) so motion is visible along the whole route
+   at all times, not just during the brighter travelling highlight. */
+body.premium-editorial .workflow-gradient-line-v2 {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+  opacity: .65;
+  pointer-events: none;
+}
 body.premium-editorial .workflow-flow-glow-v2 {
-  stroke-width: 8;
-  opacity: .28;
+  stroke-width: 6;
+  opacity: .20;
   filter: url(#wfSoftGlow);
 }
 body.premium-editorial .workflow-flow-core-v2 {
-  stroke-width: 3;
-  opacity: .98;
-  filter: drop-shadow(0 0 3px rgba(239, 104, 24, .45));
+  stroke-width: 2.4;
+  opacity: .9;
+  filter: none;
 }
 body.premium-editorial .workflow-junction-v2 {
   fill: #fff;
@@ -4988,8 +5000,11 @@ body.premium-editorial .manager-opportunity-v2 {
     64px
     76px
     minmax(220px, 1fr)
-    auto;
+    104px;
   column-gap: 14px;
+}
+body.premium-editorial .manager-opportunity-v2 > .pri {
+  justify-self: center;
 }
 
 body.premium-editorial .manager-opportunity-stat-v2 {
@@ -5046,7 +5061,7 @@ body.premium-editorial .manager-tool-stack-v2 span {
       58px
       68px
       minmax(190px, .95fr)
-      auto;
+      92px;
     column-gap: 10px;
   }
   body.premium-editorial .manager-tool-stack-v2 {

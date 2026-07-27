@@ -5007,18 +5007,47 @@ body.premium-editorial .manager-tool-stack-v2 span {
   min-width: 0;
 }
 
-/* Keep gradient background behind the text */
-body.premium-editorial #timelineDisplay {
-  position: relative;
-  isolation: isolate;
-}
+/* Remove decorative white overlays, but keep gradient backgrounds */
+body.premium-editorial .core-def-box::after,
+
+body.premium-editorial .tool-table-wrap::before,
+body.premium-editorial .tool-table-wrap::after,
+
+body.premium-editorial .dash-chart-wrap::before,
+body.premium-editorial .dash-chart-wrap::after,
+
+body.premium-editorial .feed-panel::before,
+body.premium-editorial .feed-panel::after,
+
+body.premium-editorial .feed-item::before,
+body.premium-editorial .feed-item::after,
+
+body.premium-editorial #what-is-ai .cards-3::before,
+body.premium-editorial #what-is-ai .cards-3::after,
+
+body.premium-editorial #what-is-ai .info-card::after,
 
 body.premium-editorial #timelineDisplay::before,
-body.premium-editorial #timelineDisplay::after {
-  z-index: 0 !important;
-}
+body.premium-editorial #timelineDisplay::after,
 
-body.premium-editorial #timelineDisplay > * {
-  position: relative;
-  z-index: 1;
+body.premium-editorial .alayer::before,
+body.premium-editorial .alayer::after,
+
+body.premium-editorial .dash-stats .dstat::before,
+body.premium-editorial .dash-stats .dstat::after,
+
+body.premium-editorial .opportunity-row::before,
+body.premium-editorial .opportunity-row::after,
+
+body.premium-editorial .opportunity-ideas-n::before,
+body.premium-editorial .opportunity-ideas-n::after,
+
+body.premium-editorial .tool-badge::before,
+body.premium-editorial .tool-badge::after,
+
+body.premium-editorial .manager-kpi::before,
+body.premium-editorial .manager-chart-panel::before,
+body.premium-editorial .manager-opportunities-panel::before {
+  display: none !important;
+  content: none !important;
 }

@@ -419,6 +419,11 @@ function drawWorkflowConnectorsV2() {
     setGradient(target.gradient, sourceX, sourceY, target.x, target.y);
   });
 
+  // The shared lead-in segment (source panel → junction) gets its own
+  // gradient mapped across just that short horizontal stretch, so its
+  // travelling highlight moves at the same visual speed as the branches.
+  setGradient('wfTrunkGradient', sourceX, sourceY, junctionX, sourceY);
+
   const f = n => Number(n).toFixed(1);
 
   // Builds one continuous path through a list of waypoints, easing every
@@ -454,8 +459,18 @@ function drawWorkflowConnectorsV2() {
   // above that to carry the visible motion. Only one dash pattern exists at
   // a time on the path, so nothing collides with anything else.
   targets.forEach((target, index) => {
+    // Full route (kept for the neutral gray rail underneath everything).
     const routeD = smoothPath([
       [sourceX, sourceY],
+      [junctionX, sourceY],
+      [junctionX, target.y],
+      [target.x, target.y]
+    ]);
+    // Colour + motion for this branch only run from the junction onward,
+    // since the source→junction stretch now gets its own dedicated
+    // animated segment below (this avoids 3 overlapping colour lines
+    // stacking flatly on top of each other along that shared stretch).
+    const branchD = smoothPath([
       [junctionX, sourceY],
       [junctionX, target.y],
       [target.x, target.y]
@@ -464,9 +479,9 @@ function drawWorkflowConnectorsV2() {
 
     html += `
       <path class="workflow-rail-v2" d="${routeD}"></path>
-      <path class="workflow-gradient-line-v2" d="${routeD}" stroke="${gradient}"
+      <path class="workflow-gradient-line-v2" d="${branchD}" stroke="${gradient}"
             stroke-dasharray="6 5"></path>
-      <path class="workflow-flow-highlight-v2" d="${routeD}" pathLength="1" stroke="${gradient}"
+      <path class="workflow-flow-highlight-v2" d="${branchD}" pathLength="1" stroke="${gradient}"
             stroke-dasharray="0.16 0.84" stroke-dashoffset="1">
         <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${target.delay}s"
@@ -474,6 +489,24 @@ function drawWorkflowConnectorsV2() {
       </path>
     `;
   });
+
+  // Dedicated trunk segment (source panel → junction): the same colour
+  // treatment and travelling highlight as the branch lines, so the
+  // shared lead-in line animates too instead of sitting flat and gray.
+  const trunkD = smoothPath([
+    [sourceX, sourceY],
+    [junctionX, sourceY]
+  ]);
+  html += `
+    <path class="workflow-gradient-line-v2" d="${trunkD}" stroke="url(#wfTrunkGradient)"
+          stroke-dasharray="6 5"></path>
+    <path class="workflow-flow-highlight-v2" d="${trunkD}" pathLength="1" stroke="url(#wfTrunkGradient)"
+          stroke-dasharray="0.28 0.72" stroke-dashoffset="1">
+      <animate attributeName="stroke-dashoffset" from="1" to="0"
+               dur="2.4s" begin="0s"
+               repeatCount="indefinite" calcMode="linear"></animate>
+    </path>
+  `;
 
   // Static junction only; it is not part of the motion effect.
   html += `<circle class="workflow-junction-v2" cx="${f(junctionX)}" cy="${f(sourceY)}" r="4.2"></circle>`;

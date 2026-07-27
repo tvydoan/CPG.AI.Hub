@@ -4963,13 +4963,27 @@ body.premium-editorial .workflow-flow-route-v2 {
 /* The gradient line flows continuously via a single fine dash pattern
    animated in app.js (SMIL). Only one dash size is used on the path so
    nothing visually collides or overlaps into mismatched chunks. */
+/* Small, even dash pattern like the reference style — static (motion is
+   carried by the highlight layer), with a touch of glow so the resting
+   line still feels soft rather than flat. */
 body.premium-editorial .workflow-gradient-line-v2 {
   fill: none;
   vector-effect: non-scaling-stroke;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 1.8;
-  opacity: .85;
+  opacity: .6;
+  filter: url(#wfSoftGlow);
+  pointer-events: none;
+}
+/* One brighter travelling highlight on top carries the visible motion. */
+body.premium-editorial .workflow-flow-highlight-v2 {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.6;
+  opacity: .95;
   filter: url(#wfSoftGlow);
   pointer-events: none;
 }

@@ -399,8 +399,6 @@ function drawWorkflowConnectorsV2() {
 
   const nearestTargetX = Math.min(...targets.map(t => t.x));
   const junctionX = sourceX + (nearestTargetX - sourceX) * 0.52;
-  const topY = Math.min(...targets.map(t => t.y));
-  const bottomY = Math.max(...targets.map(t => t.y));
 
   svg.setAttribute('viewBox', `0 0 ${mapRect.width} ${mapRect.height}`);
   svg.setAttribute('preserveAspectRatio', 'none');
@@ -422,39 +420,66 @@ function drawWorkflowConnectorsV2() {
   });
 
   const f = n => Number(n).toFixed(1);
-  const sourcePath = `M ${f(sourceX)} ${f(sourceY)} H ${f(junctionX)}`;
-  const trunkPath = `M ${f(junctionX)} ${f(topY)} V ${f(bottomY)}`;
 
-  // Permanent neutral-gray connector network.
-  let html = `
-    <path class="workflow-rail-v2" d="${sourcePath}"></path>
-    <path class="workflow-rail-v2" d="${trunkPath}"></path>
-  `;
+  // Builds one continuous path through a list of waypoints, easing every
+  // interior corner into a short quadratic curve instead of a hard right
+  // angle. This is what gives the line its smooth, rounded-elbow look.
+  const CORNER_RADIUS = 15;
+  const smoothPath = points => {
+    let d = `M ${f(points[0][0])} ${f(points[0][1])}`;
+    for (let i = 1; i < points.length - 1; i++) {
+      const [x0, y0] = points[i - 1];
+      const [x1, y1] = points[i];
+      const [x2, y2] = points[i + 1];
+      const inLen = Math.hypot(x1 - x0, y1 - y0) || 1;
+      const outLen = Math.hypot(x2 - x1, y2 - y1) || 1;
+      const r = Math.min(CORNER_RADIUS, inLen / 2, outLen / 2);
+      const beforeX = x1 - ((x1 - x0) / inLen) * r;
+      const beforeY = y1 - ((y1 - y0) / inLen) * r;
+      const afterX = x1 + ((x2 - x1) / outLen) * r;
+      const afterY = y1 + ((y2 - y1) / outLen) * r;
+      d += ` L ${f(beforeX)} ${f(beforeY)} Q ${f(x1)} ${f(y1)} ${f(afterX)} ${f(afterY)}`;
+    }
+    const last = points[points.length - 1];
+    d += ` L ${f(last[0])} ${f(last[1])}`;
+    return d;
+  };
 
-  targets.forEach(target => {
-    const branchPath = `M ${f(junctionX)} ${f(target.y)} H ${f(target.x)}`;
-    html += `<path class="workflow-rail-v2" d="${branchPath}"></path>`;
-  });
+  let html = '';
 
-  // A continuous luminous dash travels over the gray rail. SMIL animation is
-  // embedded directly in the SVG so the motion works even when CSS animation
-  // on SVG paths is inconsistent. No moving circles are used.
+  // Each branch gets one smooth, rounded-corner route from the source to
+  // its output card. The same route is drawn three times: a soft neutral
+  // rail underneath, a continuously visible gradient line on top of it
+  // (this is the smoother "always on" gradient look), and a brighter
+  // travelling highlight for motion. No circles are added along the line.
   targets.forEach((target, index) => {
-    const routePath = `M ${f(sourceX)} ${f(sourceY)} H ${f(junctionX)} V ${f(target.y)} H ${f(target.x)}`;
+    const routeD = smoothPath([
+      [sourceX, sourceY],
+      [junctionX, sourceY],
+      [junctionX, target.y],
+      [target.x, target.y]
+    ]);
     const begin = `${target.delay}s`;
     const gradient = `url(#${target.gradient})`;
     const routeClass = `workflow-flow-route-v2 workflow-flow-route-${index + 1}-v2`;
 
     html += `
+      <path class="workflow-rail-v2" d="${routeD}"></path>
+      <path class="workflow-gradient-line-v2" d="${routeD}" pathLength="1" stroke="${gradient}"
+            stroke-dasharray="0.05 0.045" stroke-dashoffset="0">
+        <animate attributeName="stroke-dashoffset" from="0" to="-0.095"
+                 dur="1.6s" begin="${target.delay * 0.4}s"
+                 repeatCount="indefinite" calcMode="linear"></animate>
+      </path>
       <path class="${routeClass} workflow-flow-glow-v2"
-            d="${routePath}" pathLength="1" stroke="${gradient}"
+            d="${routeD}" pathLength="1" stroke="${gradient}"
             stroke-dasharray="0.20 0.80" stroke-dashoffset="1">
         <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${begin}"
                  repeatCount="indefinite" calcMode="linear"></animate>
       </path>
       <path class="${routeClass} workflow-flow-core-v2"
-            d="${routePath}" pathLength="1" stroke="${gradient}"
+            d="${routeD}" pathLength="1" stroke="${gradient}"
             stroke-dasharray="0.14 0.86" stroke-dashoffset="1">
         <animate attributeName="stroke-dashoffset" from="1" to="0"
                  dur="${target.duration}s" begin="${begin}"

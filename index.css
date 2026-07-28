@@ -5612,3 +5612,36 @@ html[lang="vi"] #home .hero-h1 {
   align-items: center;
   gap: 10px;
 }
+
+
+/* ===== MULTI-PAGE VISIBILITY — preserves original section designs ===== */
+body.page-home > section { display: none; }
+body.page-home > section#home { display: block; }
+
+body.page-learn > section { display: none; }
+body.page-learn > section#what-is-ai,
+body.page-learn > section#quick-learns,
+body.page-learn > section#timeline { display: block; }
+
+body.page-tools > section { display: none; }
+body.page-tools > section#ai-tools,
+body.page-tools > section#design-workflow,
+body.page-tools > section#task-help { display: block; }
+
+body.page-insights > section { display: none; }
+body.page-insights > section#global-firms,
+body.page-insights > section#aios { display: block; }
+
+body.page-ideas > section { display: none; }
+body.page-ideas > section#share-ideas { display: block; }
+
+body.page-manager > section { display: none; }
+body.page-manager > section#dashboard { display: block; }
+
+/* Keep the same top spacing when a page starts without the hero section. */
+body:not(.page-home) > section:first-of-type,
+body.page-learn > #what-is-ai,
+body.page-tools > #ai-tools,
+body.page-insights > #global-firms,
+body.page-ideas > #share-ideas,
+body.page-manager > #dashboard { padding-top: 140px; }

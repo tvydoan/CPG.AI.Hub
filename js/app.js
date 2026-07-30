@@ -667,7 +667,37 @@ const TASK_HELP_DATA = {
 function initTaskHelp() {
   const tabs = Array.from(document.querySelectorAll('.need-tab'));
   const panel = document.getElementById('needPanelLight');
+  const workflowSection = document.getElementById('design-workflow');
   if (!panel) return;
+
+  // Only Architecture/technical work touches Revit, SketchUp, or AutoCAD.
+  // The software workflow board lives here, one step below "Design & Visualize",
+  // instead of standing alone as a section every department has to scroll past.
+  const SOFTWARE_PICKS = [
+    { tool: 'Revit', img: 'images/revit.png' },
+    { tool: 'SketchUp', img: 'images/sketchup.png' },
+    { tool: 'AutoCAD', img: 'images/autocad.png' }
+  ];
+
+  function hideWorkflowBoard() {
+    workflowSection?.classList.remove('is-revealed');
+  }
+
+  function revealWorkflowBoard(preselectTool) {
+    if (!workflowSection) return;
+    workflowSection.classList.add('is-revealed');
+    // Board was display:none until now, so connector geometry couldn't be
+    // measured. Redraw once it's actually laid out.
+    requestAnimationFrame(() => {
+      drawWorkflowConnectorsV2?.();
+      setTimeout(() => drawWorkflowConnectorsV2?.(), 160);
+    });
+    if (preselectTool) {
+      const btn = workflowSection.querySelector(`[data-tool="${preselectTool}"]`);
+      btn?.click();
+    }
+    workflowSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   function renderPanel(key) {
     const data = TASK_HELP_DATA[key];
@@ -687,6 +717,16 @@ function initTaskHelp() {
         <span class="need-prompt-text">${data.prompt}</span>
         <button class="need-copy-btn" type="button"><i class="fa-solid fa-copy"></i> Copy</button>
       </div>
+      ${key === 'design' ? `
+      <div class="need-software-picker">
+        <span class="need-software-label">Which software are you working in? See its full workflow:</span>
+        <div class="need-software-row">
+          ${SOFTWARE_PICKS.map(s => `
+            <button class="need-software-btn" type="button" data-software="${s.tool}">
+              <img src="${s.img}" alt="${s.tool} logo"><span>${s.tool}</span>
+            </button>`).join('')}
+        </div>
+      </div>` : ''}
     `;
 
     const copyBtn = panel.querySelector('.need-copy-btn');
@@ -696,11 +736,22 @@ function initTaskHelp() {
         setTimeout(() => { copyBtn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy'; }, 2000);
       });
     });
+
+    panel.querySelectorAll('.need-software-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        panel.querySelectorAll('.need-software-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        revealWorkflowBoard(btn.dataset.software);
+      });
+    });
   }
 
   function selectTab(key) {
     tabs.forEach(t => t.classList.toggle('active', t.dataset.need === key));
     renderPanel(key);
+    // Software board only ever belongs to the Design & Visualize task.
+    // Switching to any other tab collapses it again.
+    if (key !== 'design') hideWorkflowBoard();
   }
 
   tabs.forEach(tab => {

@@ -5625,8 +5625,27 @@ body.page-learn > section#timeline { display: block; }
 
 body.page-tools > section { display: none; }
 body.page-tools > section#ai-tools,
-body.page-tools > section#design-workflow,
 body.page-tools > section#task-help { display: block; }
+
+/* Connected Workflow (Revit/SketchUp/AutoCAD board) is architecture-specific.
+   Nested under Quick Start > "Design & Visualize" instead of shown to every
+   department by default. Revealed by JS when that tab is selected. */
+body.page-tools > section#design-workflow { display: none; }
+body.page-tools > section#design-workflow.is-revealed { display: block; animation: designWorkflowIn .35s ease; }
+
+@keyframes designWorkflowIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Software picker inside the Design & Visualize task panel */
+.need-software-picker { margin-top: 22px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); }
+.need-software-picker .need-software-label { font-size: 13px; letter-spacing: .04em; opacity: .75; margin-bottom: 10px; display: block; }
+.need-software-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.need-software-btn { display: flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.16); background: rgba(255,255,255,0.04); cursor: pointer; font-size: 14px; color: inherit; transition: border-color .2s, background .2s; }
+.need-software-btn img { width: 18px; height: 18px; object-fit: contain; }
+.need-software-btn:hover { border-color: rgba(255,255,255,0.4); }
+.need-software-btn.active { border-color: #f4a900; background: rgba(244,169,0,0.12); }
 
 body.page-insights > section { display: none; }
 body.page-insights > section#global-firms,
@@ -5645,3 +5664,83 @@ body.page-tools > #ai-tools,
 body.page-insights > #global-firms,
 body.page-ideas > #share-ideas,
 body.page-manager > #dashboard { padding-top: 140px; }
+
+/* ══════════════════════════════════════════════════
+   HOME HERO — WHITE BACKGROUND
+   Was intentionally kept dark (#080808) while every other
+   section on the site was already white. Switched to match,
+   plus recolouring the glass button/badge/pill/nav elements
+   that assumed a dark hero behind them.
+══════════════════════════════════════════════════ */
+body.premium-editorial #home.hero {
+  background-color: #ffffff !important;
+  color: #1a1a1a;
+}
+
+body.premium-editorial #home .hero-sub { color: rgba(26,26,26,0.62) !important; }
+
+/* Glass buttons + stat row: dark-tinted glass instead of white-tinted glass */
+body.premium-editorial #home .btn-ghost-lg,
+body.premium-editorial #home .hero-stats-row {
+  background: rgba(10,10,10,0.035) !important;
+  border-color: rgba(10,10,10,0.14) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.6),
+    0 6px 18px rgba(0,0,0,0.06) !important;
+}
+body.premium-editorial #home .btn-ghost-lg { color: rgba(26,26,26,0.75) !important; }
+body.premium-editorial #home .btn-ghost-lg:hover {
+  color: #000 !important;
+  background: rgba(10,10,10,0.07) !important;
+  border-color: rgba(10,10,10,0.24) !important;
+}
+body.premium-editorial #home .btn-primary::before,
+body.premium-editorial #home .btn-ghost-lg::before,
+body.premium-editorial #home .hero-stats-row::before { display: none !important; }
+
+body.premium-editorial #home .hero-stats-row .hstat-div {
+  background: linear-gradient(to bottom, transparent, rgba(10,10,10,0.14) 18%, rgba(10,10,10,0.14) 82%, transparent) !important;
+}
+body.premium-editorial #home .hstat-l { color: rgba(26,26,26,0.55) !important; }
+
+/* Badge keeps its red accent; just needs a border/bg suited to white */
+body.premium-editorial #home .hero-badge {
+  background: rgba(209,0,0,0.06) !important;
+  border-color: rgba(209,0,0,0.22) !important;
+}
+
+/* Quick-task pills under the hero copy */
+body.premium-editorial #home .hero-needs-label { color: rgba(26,26,26,0.75) !important; }
+body.premium-editorial #home .need-pill {
+  background: rgba(10,10,10,0.03) !important;
+  border-color: rgba(10,10,10,0.16) !important;
+  color: rgba(26,26,26,0.8) !important;
+}
+body.premium-editorial #home .need-pill:hover,
+body.premium-editorial #home .need-pill:focus-visible {
+  background: rgba(10,10,10,0.07) !important;
+  border-color: rgba(10,10,10,0.32) !important;
+  color: #000 !important;
+}
+
+/* Nav previously relied on the dark hero for contrast (white text before
+   scroll, dark text after via .navbar.scrolled). The hero is light now, so
+   use the same dark-on-light nav styling regardless of scroll position —
+   matches what every other page already shows at scroll position 0. */
+.nav-site-name { color: #111111 !important; }
+.nav-site-sub  { color: #6b7280 !important; }
+.nav-link {
+  color: #1a1a1a !important;
+  background: rgba(0,0,0,0.05) !important;
+  border-color: transparent !important;
+}
+.nav-link:hover { color: #000 !important; background: rgba(0,0,0,0.1) !important; }
+.nav-link.active {
+  color: #ffffff !important;
+  background: var(--red) !important;
+  border-color: var(--red) !important;
+}
+.nav-blur {
+  background: rgba(255,255,255,0.6) !important;
+  border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+}

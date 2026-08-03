@@ -2,7 +2,7 @@
    EN / VI INTERNATIONALIZATION
 ══════════════════ */
 const VI_TRANSLATIONS = {
-  'Home':'Trang chủ','Learn':'Tìm hiểu','Insights':'Góc nhìn','Social':'Mạng xã hội','What is AI':'AI là gì','What is AI?':'AI là gì?','Quick Videos':'Video ngắn','AI Tools':'Công cụ AI','Explore':'Khám phá','Global Leaders':'Doanh nghiệp hàng đầu','AI Agents':'Tác nhân AI','AI History':'Lịch sử AI','Manager View':'Góc nhìn quản lý','WK Slides':'Slide WK','Submit Idea':'Gửi ý tưởng',
+  'Home':'Trang chủ','Learn':'Tìm hiểu','What is AI':'AI là gì','What is AI?':'AI là gì?','Quick Videos':'Video ngắn','AI Tools':'Công cụ AI','Explore':'Khám phá','Global Leaders':'Doanh nghiệp hàng đầu','AI Agents':'Tác nhân AI','AI History':'Lịch sử AI','Manager View':'Góc nhìn quản lý','WK Slides':'Slide WK','Submit Idea':'Gửi ý tưởng',
   'CONNECTED AI WORKFLOW':'QUY TRÌNH AI KẾT NỐI','From model to final story':'Từ mô hình đến câu chuyện hoàn chỉnh','Connect the tools your design team already uses. Start with a 3D model, move into AI rendering, then branch into video and presentation outputs.':'Kết nối các công cụ mà đội ngũ thiết kế đang sử dụng. Bắt đầu từ mô hình 3D, chuyển sang render bằng AI, sau đó phân nhánh thành video và thuyết trình.','Select any tool to see where it fits in the workflow.':'Chọn một công cụ để xem vị trí của nó trong quy trình.','SELECT A TOOL':'CHỌN MỘT CÔNG CỤ','Explore the connected workflow':'Khám phá quy trình kết nối','Click any software node to see its role, recommended handoff, and expected output.':'Nhấp vào một công cụ để xem vai trò, bước chuyển giao đề xuất và đầu ra dự kiến.','3D MODEL':'MÔ HÌNH 3D','AI RENDER':'RENDER AI','VIDEO & MOTION':'VIDEO & CHUYỂN ĐỘNG','PRESENTATION':'THUYẾT TRÌNH','INTERACTIVE SNAPSHOT':'TỔNG QUAN TƯƠNG TÁC','Click a metric':'Nhấp vào một chỉ số','Select a dashboard card to reveal its current interpretation.':'Chọn một thẻ dashboard để xem diễn giải dữ liệu hiện tại.','VIETNAM DIGITAL OFFICE':'VĂN PHÒNG SỐ VIỆT NAM','CPG VIETNAM AI INITIATIVE 2026':'SÁNG KIẾN AI CPG VIỆT NAM 2026','AI isn\'t replacing you.':'AI không thay thế bạn.','It\'s your new superpower.':'AI là siêu năng lực mới của bạn.','A simple guide for CPG Vietnam staff to understand AI, see how it helps your daily work, and share your own ideas.':'Hướng dẫn đơn giản giúp nhân sự CPG Việt Nam hiểu AI, ứng dụng vào công việc hằng ngày và chia sẻ ý tưởng của mình.','Watch 10-min intro':'Xem video giới thiệu 10 phút','Start learning':'Bắt đầu tìm hiểu','2-17 min':'2–17 phút','Watch anytime':'Xem bất cứ lúc nào','4 topics':'4 chủ đề','Easy categories':'Danh mục dễ hiểu','1 form':'1 biểu mẫu','Share your ideas':'Chia sẻ ý tưởng','For CPG staff':'Dành cho nhân sự CPG',
   'LEARN THE BASICS':'TÌM HIỂU NỀN TẢNG','What is AI, really?':'Thực chất AI là gì?','No tech jargon. Just plain language.':'Không thuật ngữ phức tạp. Chỉ là cách giải thích dễ hiểu.','In one sentence:':'Nói ngắn gọn:','AI stands for artificial intelligence, a field of computer science focused on building systems that can perform tasks that normally require human intelligence, such as recognizing patterns, understanding language, generating content, making predictions, and supporting decisions. Most AI used today is narrow AI, designed for specific tasks rather than general human-like thinking.':'AI là viết tắt của Artificial Intelligence, nghĩa là trí tuệ nhân tạo. Đây là một lĩnh vực của khoa học máy tính nhằm xây dựng các hệ thống có thể thực hiện những nhiệm vụ thường cần đến trí tuệ con người, như nhận dạng quy luật, hiểu ngôn ngữ, tạo nội dung, dự đoán và hỗ trợ ra quyết định. Phần lớn AI hiện nay là AI hẹp, được thiết kế cho các nhiệm vụ cụ thể chứ chưa có khả năng tư duy tổng quát như con người.','AI is a very smart assistant':'AI là một trợ lý rất thông minh','Think of it like a colleague who has read every book, every report, and every manual, and can answer your questions instantly. You still make the decisions; it helps you get there faster.':'Hãy hình dung AI như một đồng nghiệp đã đọc mọi cuốn sách, báo cáo và hướng dẫn, có thể trả lời gần như ngay lập tức. Bạn vẫn là người quyết định; AI chỉ giúp bạn đi đến kết quả nhanh hơn.','Everyday':'Hằng ngày','AI helps you do your job better':'AI giúp bạn làm việc hiệu quả hơn','In architecture and design, AI can generate concept sketches, check drawings for errors, write meeting summaries, and compare documents, so you spend time on creative thinking, not repetitive tasks.':'Trong kiến trúc và thiết kế, AI có thể tạo phác thảo ý tưởng, kiểm tra lỗi bản vẽ, viết tóm tắt cuộc họp và so sánh tài liệu, để bạn dành thời gian cho tư duy sáng tạo thay vì việc lặp lại.','Design & Work':'Thiết kế & Công việc','AI has rules at CPG':'Việc sử dụng AI tại CPG có quy định','CPG follows strict AI usage guidelines approved by leadership. Never share confidential client data with public AI tools. Ask your manager if unsure about what\'s allowed.':'CPG tuân thủ hướng dẫn sử dụng AI nghiêm ngặt do lãnh đạo phê duyệt. Không bao giờ chia sẻ dữ liệu khách hàng mật với công cụ AI công khai. Hãy hỏi quản lý khi chưa chắc nội dung nào được phép sử dụng.','Security':'Bảo mật','START HERE':'BẮT ĐẦU TỪ ĐÂY','Think first, then find your words.':'Hãy suy nghĩ trước, rồi mới tìm cách diễn đạt.','AI is only a tool.':'AI chỉ là công cụ.','Start with one task that slows you down, then use AI to help you work through it.':'Hãy bắt đầu từ một việc đang làm bạn mất thời gian, rồi dùng AI để xử lý việc đó hiệu quả hơn.',
   'QUICK LEARNS':'HỌC NHANH','Watch. Learn. Done.':'Xem. Hiểu. Áp dụng.','"10 minutes learning AI today saves you hours every week."':'“10 phút học AI hôm nay có thể giúp bạn tiết kiệm nhiều giờ mỗi tuần.”','Pick a topic below to start.':'Chọn một chủ đề bên dưới để bắt đầu.','All':'Tất cả','AI Basics':'AI cơ bản','Design & Architecture':'Thiết kế & Kiến trúc','Work & Productivity':'Công việc & Năng suất','These are curated from public YouTube channels. None of your viewing data is tracked or shared.':'Các video được tuyển chọn từ những kênh YouTube công khai. Dữ liệu xem của bạn không bị theo dõi hoặc chia sẻ.',
@@ -12,11 +12,44 @@ const VI_TRANSLATIONS = {
   'TIMELINE':'DÒNG THỜI GIAN','AI Evolution & Milestones':'Quá trình phát triển & các cột mốc AI','Explore seven decades of developments shaping modern enterprise AI.':'Khám phá bảy thập kỷ phát triển đã định hình AI hiện đại trong doanh nghiệp.','Next?':'Tiếp theo?','Foundations':'Nền tảng','Machine Learning':'Học máy','Big Data Era':'Kỷ nguyên dữ liệu lớn','Deep Learning':'Học sâu','Generative AI':'AI tạo sinh','Stay Curious':'Luôn tò mò',
   'CPG BOTTOM-UP HUB':'TRUNG TÂM SÁNG KIẾN TỪ NHÂN SỰ CPG','What slows you down?':'Điều gì đang làm bạn chậm lại?','Tell us about a task that takes too long. Leadership will review your ideas and find the right AI tool to help.':'Hãy chia sẻ một công việc đang tốn quá nhiều thời gian. Ban lãnh đạo sẽ xem xét ý tưởng và tìm công cụ AI phù hợp để hỗ trợ.','Your name or nickname':'Tên hoặc biệt danh của bạn','Your department':'Phòng ban của bạn','Pick one...':'Chọn một mục...','Urban Design & Planning':'Thiết kế đô thị & Quy hoạch','Landscape Architecture':'Kiến trúc cảnh quan','Structural / MEP Engineering':'Kết cấu / Kỹ thuật MEP','Quantity Surveying & Contracts':'Dự toán & Hợp đồng','Operations & IT':'Vận hành & CNTT','What task takes too much time?':'Công việc nào đang tốn quá nhiều thời gian?','(be specific)':'(hãy mô tả cụ thể)','Manual data entry':'Nhập dữ liệu thủ công','Comparing documents':'So sánh tài liệu','Writing reports':'Viết báo cáo','Repetitive design tasks':'Công việc thiết kế lặp lại','Searching for information':'Tìm kiếm thông tin','Any AI idea that could help?':'Bạn có ý tưởng AI nào có thể hỗ trợ không?','(optional, just describe the outcome you\'d want)':'(không bắt buộc, chỉ cần mô tả kết quả bạn mong muốn)','Add extra details':'Thêm thông tin chi tiết','(optional, helps us prioritize)':'(không bắt buộc, giúp chúng tôi ưu tiên)','Roughly how many hours per week does this task take?':'Công việc này mất khoảng bao nhiêu giờ mỗi tuần?','(optional)':'(không bắt buộc)','Data type involved':'Loại dữ liệu liên quan','Public / general info':'Thông tin công khai / chung','Internal CPG data':'Dữ liệu nội bộ CPG','Confidential client data':'Dữ liệu mật của khách hàng','Submit Contribution':'Gửi đóng góp','Send to CPG Leadership':'Gửi đến lãnh đạo CPG','Recent ideas from the team':'Ý tưởng gần đây từ đội ngũ','Live':'Trực tiếp','Pause':'Tạm dừng','Resume':'Tiếp tục','Drag to read':'Kéo để đọc','Just now':'Vừa xong','Anonymous':'Ẩn danh','Sent to leadership!':'Đã gửi đến lãnh đạo!','hrs/week':'giờ/tuần','h ago':'giờ trước','d ago':'ngày trước',
   'LEADERSHIP VIEW':'GÓC NHÌN LÃNH ĐẠO','AI Readiness at a Glance':'Tổng quan mức độ sẵn sàng về AI','A clear snapshot of current staff ideas, estimated time savings, and the strongest AI opportunities across CPG Vietnam.':'Tổng quan rõ ràng về các ý tưởng hiện tại, thời gian có thể tiết kiệm và những cơ hội AI nổi bật tại CPG Việt Nam.','CURRENT SNAPSHOT':'TỔNG QUAN HIỆN TẠI','Estimated hours saved':'Số giờ ước tính tiết kiệm','Potential savings from current ideas':'Tiềm năng tiết kiệm từ các ý tưởng hiện tại','Across 5 active departments':'Từ 5 phòng ban đang tham gia','Architecture leads participation':'Khối Kiến trúc có mức tham gia cao nhất','High-priority opportunities':'Cơ hội ưu tiên cao','Architecture and Quantity Surveying':'Kiến trúc và Dự toán','Estimated weekly hours saved by department':'Số giờ ước tính tiết kiệm mỗi tuần theo phòng ban','Current potential based on the 12 submitted ideas.':'Tiềm năng hiện tại dựa trên 12 ý tưởng đã gửi.','Estimated hours saved':'Số giờ ước tính tiết kiệm','Ideas and estimated weekly savings are derived from the current staff submissions.':'Số lượng ý tưởng và số giờ tiết kiệm mỗi tuần được tổng hợp từ các đóng góp hiện tại của nhân sự.','Est. hrs/week':'Giờ ước tính/tuần','For Soh Wee Keong, Stephen & Cuong, real-time snapshot of staff participation and AI opportunities.':'Dành cho Soh Wee Keong, Stephen & Cuong, tổng quan theo thời gian thực về mức độ tham gia của nhân sự và các cơ hội ứng dụng AI.','Ideas submitted':'Ý tưởng đã gửi','Hours could be saved / week':'Số giờ có thể tiết kiệm / tuần','Departments active':'Phòng ban đang tham gia','DTSC policy compliant':'Tuân thủ chính sách DTSC','Department Opportunity Map':'Bản đồ cơ hội theo phòng ban','Department':'Phòng ban','Ideas':'Ý tưởng','Biggest pain point':'Vấn đề lớn nhất','Best AI tool':'Công cụ AI phù hợp nhất','Priority':'Mức ưu tiên','Quantity Surveying':'Dự toán','Render iterations take too long':'Lặp lại phối cảnh mất quá nhiều thời gian','Manual BOQ spec comparisons':'So sánh BOQ và thông số thủ công','Solar & wind simulations':'Mô phỏng bức xạ & gió','Plant palette research':'Nghiên cứu bảng cây xanh','Engineering & FM':'Kỹ thuật & FM','BIM clash detection':'Phát hiện xung đột BIM','High':'Cao','Medium':'Trung bình','In Progress':'Đang triển khai',
-  'AI Workshop Slide Outline':'Dàn ý slide Workshop AI','12-slide keynote outline for Soh Wee Keong\'s opening at the AI Consulting Workshop:':'Dàn ý keynote 12 slide cho phần mở đầu của Soh Wee Keong tại Workshop Tư vấn AI:','Copy to clipboard':'Sao chép','Copied!':'Đã sao chép!','Slide':'Slide','CPG Vietnam Digital Transformation • Led by Soh Wee Keong':'Chuyển đổi số CPG Việt Nam • Dẫn dắt bởi Soh Wee Keong','Videos':'Video','Tools':'Công cụ','Global Firms':'Doanh nghiệp toàn cầu','Share Idea':'Chia sẻ ý tưởng','Back to top':'Lên đầu trang','Back to top ↑':'Lên đầu trang ↑','Scroll Position':'Vị trí cuộn',
+  'AI Workshop Slide Outline':'Dàn ý slide Workshop AI','12-slide keynote outline for Soh Wee Keong\'s opening at the AI Consulting Workshop:':'Dàn ý keynote 12 slide cho phần mở đầu của Soh Wee Keong tại Workshop Tư vấn AI:','Copy to clipboard':'Sao chép','Copied!':'Đã sao chép!','Slide':'Slide','CPG Vietnam Digital Transformation • Led by Soh Wee Keong':'Chuyển đổi số CPG Việt Nam • Dẫn dắt bởi Soh Wee Keong','Videos':'Video','Tools':'Công cụ','Global Firms':'Doanh nghiệp toàn cầu','Share Idea':'Chia sẻ ý tưởng','Back to top':'Lên đầu trang','Scroll Position':'Vị trí cuộn',
   'e.g. Cuong or Landscape team':'VD: Cường hoặc nhóm Cảnh quan','e.g. Every project, I spend 12 hours manually comparing room sizes in PDF drawings against the client\'s spec sheet.':'VD: Mỗi dự án, tôi mất 12 giờ để so sánh thủ công diện tích phòng trong bản vẽ PDF với bảng yêu cầu của khách hàng.','e.g. I\'d love a tool that reads both documents and highlights where the numbers don\'t match.':'VD: Tôi muốn có công cụ đọc cả hai tài liệu và đánh dấu các số liệu không khớp.','e.g. 10':'VD: 10',
   'Manually re-typing or copying information between documents and systems.':'Nhập lại hoặc sao chép thủ công thông tin giữa các tài liệu và hệ thống.','Manually comparing drawings, specs, or documents to check for mismatches.':'So sánh thủ công bản vẽ, thông số hoặc tài liệu để tìm điểm không khớp.','Writing reports, meeting minutes, or summaries by hand.':'Tự viết báo cáo, biên bản họp hoặc bản tóm tắt.','Repetitive design or drafting tasks that take up creative time.':'Các công việc thiết kế hoặc triển khai bản vẽ lặp lại, chiếm thời gian sáng tạo.','Searching for information across files, emails, or folders.':'Tìm kiếm thông tin trong nhiều tệp, email hoặc thư mục.'
 };
 
+Object.assign(VI_TRANSLATIONS, {
+  "How to Use": "Cách sử dụng",
+  "Find Tools": "Tìm công cụ",
+  "Quick Start": "Bắt đầu nhanh",
+  "AI Workflows": "Quy trình AI",
+  "AI Basics": "Kiến thức AI cơ bản",
+  "Find by Task": "Tìm theo công việc",
+  "Approved Tools": "Công cụ được phê duyệt",
+  "Workflows": "Quy trình sử dụng",
+  "News": "Tin tức",
+  "Articles & Videos": "Bài viết & Video",
+  "AI Trends": "Xu hướng AI",
+  "Find a tool for my task": "Tìm công cụ cho công việc của tôi",
+  "See how to use tools": "Xem cách sử dụng công cụ",
+  "AI NEWS & PRACTICAL UPDATES": "TIN TỨC AI & CẬP NHẬT THỰC TIỄN",
+  "News you can use at work.": "Tin tức có thể áp dụng vào công việc.",
+  "Short reads, practical videos, and examples from the design and technology industries.": "Bài đọc ngắn, video thực hành và ví dụ từ ngành thiết kế và công nghệ.",
+  "Featured articles": "Bài viết nổi bật",
+  "Practical videos": "Video thực hành",
+  "Read article": "Đọc bài viết",
+  "How design and engineering firms are turning AI into value": "Cách các công ty thiết kế và kỹ thuật biến AI thành giá trị",
+  "Key findings on productivity, agentic AI, and the foundations needed to apply AI effectively.": "Các kết quả chính về năng suất, AI tác nhân và nền tảng cần thiết để ứng dụng AI hiệu quả.",
+  "How AI is changing the way teams work": "AI đang thay đổi cách các nhóm làm việc như thế nào",
+  "Practical signals for combining human judgement, Microsoft 365, and AI agents at work.": "Những tín hiệu thực tế để kết hợp phán đoán của con người, Microsoft 365 và tác nhân AI trong công việc.",
+  "What early AI adopters are learning about everyday work": "Những điều người áp dụng AI sớm đang học được trong công việc hằng ngày",
+  "Evidence on faster iteration, broader capabilities, and the need for thoughtful working practices.": "Minh chứng về tốc độ lặp nhanh hơn, năng lực rộng hơn và nhu cầu xây dựng cách làm việc có cân nhắc.",
+  "Curated from official reports and public video channels. External sources open in a new tab.": "Nội dung được tuyển chọn từ báo cáo chính thức và các kênh video công khai. Nguồn bên ngoài sẽ mở trong tab mới.",
+  "HOW TO USE": "CÁCH SỬ DỤNG",
+  "GET STARTED": "BẮT ĐẦU",
+  "Data Safety": "An toàn dữ liệu",
+  "FIND TOOLS": "TÌM CÔNG CỤ",
+  "NEWS": "TIN TỨC"
+});
 Object.assign(VI_TRANSLATIONS, {
   "(Agentic Operating System).": "(Hệ điều hành tác nhân).",
   "Agentic Operating System": "Hệ điều hành tác nhân",
@@ -210,6 +243,7 @@ function translateElement(root = document.body) {
   const nodes = [];
   while (walker.nextNode()) nodes.push(walker.currentNode);
   nodes.forEach(node => {
+    if (node.parentElement?.closest('[data-no-translate]')) return;
     if (!originalTextNodes.has(node)) originalTextNodes.set(node, node.nodeValue);
     node.nodeValue = currentLanguage === 'vi' ? translateTextValue(originalTextNodes.get(node)) : originalTextNodes.get(node);
   });
@@ -231,8 +265,13 @@ function translateElement(root = document.body) {
 }
 
 function updateLanguageToggle() {
-  const btn = document.getElementById('languageToggle');
-  if (btn) btn.textContent = currentLanguage.toUpperCase();
+  const toggle = document.getElementById('languageToggle');
+  if (toggle) {
+    const targetLanguage = currentLanguage === 'en' ? 'vi' : 'en';
+    toggle.textContent = targetLanguage.toUpperCase();
+    toggle.dataset.targetLang = targetLanguage;
+    toggle.setAttribute('aria-label', currentLanguage === 'en' ? 'Switch to Vietnamese' : 'Chuyển sang tiếng Anh');
+  }
   document.documentElement.lang = currentLanguage;
   document.title = currentLanguage === 'vi' ? 'CPG AI Hub | AI dành cho nhân sự CPG Việt Nam' : 'CPG AI Hub | AI for CPG Vietnam Staff';
 }
@@ -262,12 +301,11 @@ function initI18n() {
   const navCta = document.querySelector('.nav-cta');
   if (navCta && !document.getElementById('languageToggle')) {
     const toggle = document.createElement('button');
+    toggle.id = 'languageToggle';
+    toggle.className = 'language-toggle lang-single-toggle';
     toggle.type = 'button';
-    toggle.id = 'languageToggle'; toggle.className = 'language-toggle';
-    toggle.setAttribute('aria-label', 'Switch language');
-    toggle.textContent = currentLanguage.toUpperCase();
-    navCta.append(toggle);
     toggle.addEventListener('click', () => setLanguage(currentLanguage === 'en' ? 'vi' : 'en'));
+    navCta.append(toggle);
   }
   const observer = new MutationObserver(mutations => {
     if (currentLanguage !== 'vi') return;
@@ -601,6 +639,7 @@ function initManagerReveal() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  initFooterCurtainReveal();
   initConnectedWorkflow();
   initWorkflowConnectorsV2();
   initManagerReveal();
@@ -612,9 +651,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initTimeline();
   initFeedAndForm();
   initSlideModal();
-  initDataSafetyModal();
   initTaskHelp();
+
   initRulesSlidePanel();
+  initMicrosoft365Prototype();
   initScrollReveal();
 });
 
@@ -856,29 +896,8 @@ function initNav() {
       navbar.classList.toggle('scrolled', window.scrollY > threshold);
     }
   };
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  window.addEventListener('scroll', handleScroll);
   handleScroll();
-
-  // Each HTML page is its own curtain. The footer stays fixed behind it.
-  const footer = document.getElementById('site-footer');
-  const pageCurtain = document.querySelector('.page-curtain');
-  if (navbar && footer && pageCurtain) {
-    const updateFooterNavState = () => {
-      // Reveal begins when the bottom edge of this page's white curtain
-      // rises above the bottom edge of the viewport.
-      const curtainBottom = pageCurtain.getBoundingClientRect().bottom;
-      const revealDepth = Math.max(0, window.innerHeight - curtainBottom);
-      const hidden = revealDepth > 1;
-      navbar.classList.toggle('footer-hidden', hidden);
-      if (hidden) {
-        document.querySelectorAll('.nav-dd-menu').forEach(m => m.classList.remove('open'));
-        document.querySelectorAll('.nav-dd-trigger').forEach(t => t.classList.remove('active'));
-      }
-    };
-    window.addEventListener('scroll', updateFooterNavState, { passive: true });
-    window.addEventListener('resize', updateFooterNavState);
-    updateFooterNavState();
-  }
 
   // highlight active section on scroll
   const sections = document.querySelectorAll('section[id]');
@@ -1721,8 +1740,14 @@ const SLIDES = [
 ];
 
 function initDataSafetyModal() {
-  // Legacy modal intentionally disabled. The Data Safety Guide now uses
-  // the single MAD-style centered overlay handled by initRulesSlidePanel().
+  const modal = document.getElementById('dataSafetyModal');
+  const openBtn = document.getElementById('openDataSafetyBtn');
+  const closeBtn = document.getElementById('closeDataSafetyModal');
+  if (!modal) return;
+
+  openBtn?.addEventListener('click', () => modal.classList.add('open'));
+  closeBtn?.addEventListener('click', () => modal.classList.remove('open'));
+  modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
 }
 
 function initSlideModal() {
@@ -1825,3 +1850,119 @@ function initScrollReveal() {
     .forEach(el => observer.observe(el));
 }
 
+
+
+/* Microsoft 365 sign-in prototype. Real authentication must be wired to
+   a CPG Entra ID app registration and validated server-side. */
+function initMicrosoft365Prototype() {
+  const navCta = document.querySelector('.nav-cta');
+  if (!navCta || document.getElementById('m365SignInBtn')) return;
+
+  const button = document.createElement('button');
+  button.id = 'm365SignInBtn';
+  button.className = 'm365-signin-btn';
+  button.type = 'button';
+  button.setAttribute('aria-haspopup', 'dialog');
+  navCta.prepend(button);
+
+  const modal = document.createElement('div');
+  modal.id = 'm365PrototypeModal';
+  modal.className = 'm365-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'm365Title');
+  modal.innerHTML = `<div class="m365-card">
+    <button class="m365-close" type="button" aria-label="Close sign-in prototype">×</button>
+    <span class="ms-mark ms-mark-lg" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+    <p class="m365-eyebrow">CPG AI HUB · PROTOTYPE</p>
+    <h2 id="m365Title">Sign in with your CPG account</h2>
+    <p class="m365-copy">Use your company Microsoft 365 account to unlock staff tools and internal actions.</p>
+    <button class="m365-primary" type="button">Continue with Microsoft 365</button>
+    <p class="m365-note">Demo only — no account data is collected or sent.</p>
+  </div>`;
+  document.body.appendChild(modal);
+
+  const protectedSelector = '.need-pill, #home .btn-primary, #home .btn-ghost-lg, .nav-cta .btn-primary-sm, .nav-dd-trigger, .nav-dd-item, .footer-column a:not([target="_blank"])';
+  let pendingDestination = '';
+  const isAuthenticated = () => sessionStorage.getItem('cpg-demo-auth') === '1';
+
+  const renderAuthState = () => {
+    const signedIn = isAuthenticated();
+    document.body.classList.toggle('demo-authenticated', signedIn);
+    button.classList.toggle('is-authenticated', signedIn);
+    button.setAttribute('aria-label', signedIn ? 'Signed in as CPG Employee' : 'Sign in with Microsoft 365');
+    button.innerHTML = signedIn
+      ? '<span class="auth-avatar" aria-hidden="true">CE</span><span>CPG Employee</span><span class="auth-status" aria-hidden="true"></span>'
+      : '<span class="ms-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>Sign in</span>';
+    document.querySelectorAll(protectedSelector).forEach(el => {
+      el.classList.toggle('is-locked', !signedIn);
+    });
+  };
+
+  const close = () => {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+  const open = destination => {
+    pendingDestination = destination || '';
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    modal.querySelector('.m365-close').focus();
+  };
+
+  button.addEventListener('click', () => {
+    if (isAuthenticated()) {
+      sessionStorage.removeItem('cpg-demo-auth');
+      renderAuthState();
+      return;
+    }
+    open('');
+  });
+
+  document.addEventListener('click', event => {
+    const target = event.target.closest(protectedSelector);
+    if (!target || isAuthenticated() || target.id === 'm365SignInBtn') return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    document.querySelectorAll('.nav-dd-menu').forEach(menu => menu.classList.remove('open'));
+    document.querySelectorAll('.nav-dd-trigger').forEach(trigger => trigger.classList.remove('active'));
+    open(target.href || '');
+  }, true);
+
+  modal.querySelector('.m365-close').addEventListener('click', close);
+  modal.addEventListener('click', event => { if (event.target === modal) close(); });
+  modal.querySelector('.m365-primary').addEventListener('click', () => {
+    sessionStorage.setItem('cpg-demo-auth', '1');
+    renderAuthState();
+    close();
+    const destination = pendingDestination;
+    pendingDestination = '';
+    if (destination) window.location.href = destination;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && modal.classList.contains('is-open')) close();
+  });
+
+  renderAuthState();
+  if (!isAuthenticated() && !document.body.classList.contains('page-home')) open('');
+}
+/* Footer curtain reveal: content stays above a fixed footer without using
+   transforms, so fixed dialogs and navigation keep their viewport position. */
+function initFooterCurtainReveal() {
+  const footer = document.querySelector('.footer');
+  if (!footer || document.querySelector('.page-curtain')) return;
+  const curtain = document.createElement('div');
+  curtain.className = 'page-curtain';
+  document.body.insertBefore(curtain, footer);
+  [...document.body.children].forEach(node => {
+    if (node === curtain || node === footer || node.tagName === 'SCRIPT' || node.classList.contains('scroll-progress-track')) return;
+    curtain.appendChild(node);
+  });
+  const updateRevealState = () => {
+    const revealStarted = curtain.getBoundingClientRect().bottom < window.innerHeight * 0.98;
+    document.body.classList.toggle('footer-in-view', revealStarted);
+  };
+  window.addEventListener('scroll', updateRevealState, { passive: true });
+  window.addEventListener('resize', updateRevealState);
+  requestAnimationFrame(updateRevealState);
+}

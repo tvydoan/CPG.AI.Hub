@@ -8,13 +8,12 @@
 <meta content="Your simple guide to AI at CPG Vietnam. Watch short videos, learn what AI can do, and share your ideas with leadership." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,100..1000&amp;display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
 <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet"/>
-<link href="css/index.css?v=8" rel="stylesheet"/>
+<link href="css/index.css?v=27" rel="stylesheet"/>
 </head>
 <body class="premium-editorial page-manager">
-<div class="page-curtain">
 <div class="page-bg"></div>
 <!-- ── NAVBAR ── -->
 <header class="navbar" id="navbar">
@@ -29,7 +28,7 @@
 <span class="nav-site-sub">VIETNAM DIGITAL OFFICE</span>
 </div>
 </a>
-<nav class="nav-links" id="navLinks"><a class="nav-link" href="index.html#home">Home</a><div class="nav-dropdown"><button class="nav-link nav-dd-trigger">Learn <span class="dd-icon"></span></button><div class="nav-dd-menu"><a class="nav-dd-item" href="learn.html#what-is-ai">What is AI</a><a class="nav-dd-item" href="learn.html#quick-learns">Quick Videos</a><a class="nav-dd-item" href="learn.html#timeline">AI History</a></div></div><div class="nav-dropdown"><button class="nav-link nav-dd-trigger">Tools <span class="dd-icon"></span></button><div class="nav-dd-menu"><a class="nav-dd-item" href="tools.html#ai-tools">AI Tools</a><a class="nav-dd-item" href="tools.html#task-help">Quick Start</a><a class="nav-dd-item" href="tools.html#design-workflow">Connected Workflow</a></div></div><div class="nav-dropdown"><button class="nav-link nav-dd-trigger">Insights <span class="dd-icon"></span></button><div class="nav-dd-menu"><a class="nav-dd-item" href="insights.html#global-firms">Global Leaders</a><a class="nav-dd-item" href="insights.html#aios">AI Agents</a></div></div><a class="nav-link active" href="manager.html#dashboard">Manager View</a></nav>
+<nav class="nav-links" id="navLinks"><a class="nav-link" href="index.html#home">Home</a><div class="nav-dropdown"><button class="nav-link nav-dd-trigger">Find Tools <span class="dd-icon"></span></button><div class="nav-dd-menu"><a class="nav-dd-item" href="tools.html#task-help">Find by Task</a><a class="nav-dd-item" href="tools.html#ai-tools">Approved Tools</a><a class="nav-dd-item" href="tools.html#design-workflow">Workflows</a></div></div><div class="nav-dropdown"><button class="nav-link nav-dd-trigger">News <span class="dd-icon"></span></button><div class="nav-dd-menu"><a class="nav-dd-item" href="insights.html#quick-learns">Articles &amp; Videos</a><a class="nav-dd-item" href="insights.html#global-firms">Global Firms</a><a class="nav-dd-item" href="insights.html#aios">AI Trends</a></div></div><a class="nav-link active" href="manager.html#dashboard">Manager View</a></nav>
 <div class="nav-cta">
 <a class="btn-primary-sm" href="submit-idea.html#share-ideas">Submit Idea</a>
 </div>
@@ -90,7 +89,7 @@
 <h3>AI has rules at CPG</h3>
 <p>CPG follows strict AI usage guidelines approved by leadership. Never share confidential client data with public AI tools. Ask your manager if unsure about what's allowed.</p>
 <span class="card-tag">Security</span>
-<button class="card-modal-btn" id="openDataSafetyBtn" type="button">Read Data Safety Guide <i class="fa-solid fa-arrow-right"></i></button>
+<button class="card-modal-btn" id="openDataSafetyBtn" onclick="document.getElementById('rulesSlidePanel').classList.add('is-open');document.getElementById('rulesPanelOverlay').classList.add('is-open');document.body.style.overflow='hidden';return false;" type="button">Read Data Safety Guide <i class="fa-solid fa-arrow-right"></i></button>
 </div>
 </div>
 <!-- The pen & writing metaphor -->
@@ -107,18 +106,23 @@
 <!-- ── QUICK LEARNS (Video Shorts Section) ── -->
 <section class="section alt-bg" id="quick-learns">
 <div class="container">
-<div class="section-label">QUICK LEARNS</div>
-<div class="section-head-row">
+<div class="section-label reveal-clip">AI NEWS &amp; PRACTICAL UPDATES</div>
+<div class="section-head-row reveal-up">
 <div>
-<h2>Watch. Learn. Done.</h2>
-<p class="section-sub"><em>"10 minutes learning AI today saves you hours every week."</em> Pick a topic below to start.</p>
+<h2>News you can use at work.</h2>
+<p class="section-sub">Short reads, practical videos, and examples from the design and technology industries.</p>
 </div>
+</div>
+<div class="news-content-label">Featured articles</div>
+<div class="news-article-grid">
+<a class="news-article-card" href="https://www.autodesk.com/design-make/articles/2026-ai-pulse" rel="noopener" target="_blank"><span class="news-article-meta">REPORT · AUTODESK · 2026</span><h3>How design and engineering firms are turning AI into value</h3><p>Key findings on productivity, agentic AI, and the foundations needed to apply AI effectively.</p><span class="news-read-link">Read article</span></a>
+<a class="news-article-card" href="https://news.microsoft.com/annual-work-trend-index-2026/" rel="noopener" target="_blank"><span class="news-article-meta">REPORT · MICROSOFT · 2026</span><h3>How AI is changing the way teams work</h3><p>Practical signals for combining human judgement, Microsoft 365, and AI agents at work.</p><span class="news-read-link">Read article</span></a>
+<a class="news-article-card" href="https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic" rel="noopener" target="_blank"><span class="news-article-meta">RESEARCH · ANTHROPIC</span><h3>What early AI adopters are learning about everyday work</h3><p>Evidence on faster iteration, broader capabilities, and the need for thoughtful working practices.</p><span class="news-read-link">Read article</span></a>
+</div>
+<div class="news-video-head">
+<div class="news-content-label">Practical videos</div>
 <div class="video-filter-bar">
-<button class="vf-btn active" data-vcat="all">All</button>
-<button class="vf-btn" data-vcat="basics">AI Basics</button>
-<button class="vf-btn" data-vcat="tools">AI Tools</button>
-<button class="vf-btn" data-vcat="design">Design &amp; Architecture</button>
-<button class="vf-btn" data-vcat="workplace">Work &amp; Productivity</button>
+<button class="vf-btn active" data-vcat="all">All</button><button class="vf-btn" data-vcat="tools">AI Tools</button><button class="vf-btn" data-vcat="design">Design &amp; Architecture</button><button class="vf-btn" data-vcat="workplace">Work &amp; Productivity</button><button class="vf-btn" data-vcat="basics">AI Basics</button>
 </div>
 </div>
 <div class="video-grid" id="videoGrid">
@@ -126,7 +130,7 @@
 </div>
 <div class="video-cta-note">
 
-        These are curated from public YouTube channels. None of your viewing data is tracked or shared.
+        Curated from official reports and public video channels. External sources open in a new tab.
       </div>
 </div>
 </section>
@@ -725,54 +729,27 @@
     </div>
   </div>
 </aside>
-</div><!-- /.page-curtain -->
-<footer class="footer" id="site-footer">
-<div class="footer-brand">
-<img alt="CPG International" class="footer-logo" src="images/cpg-international.png"/>
-<div>
-<div class="footer-name">CPG AI <span class="c-gold">Hub</span></div>
-<div class="footer-sub">CPG Vietnam Digital Transformation • Led by Soh Wee Keong</div>
-</div>
-</div>
-<div class="footer-wrap">
-<div class="footer-group">
-<div class="footer-col-label">Learn</div>
-<div class="footer-nav">
-<a href="learn.html#what-is-ai">What is AI?</a>
-<a href="learn.html#quick-learns">Videos</a>
-</div>
-</div>
-<div class="footer-group">
-<div class="footer-col-label">Tools</div>
-<div class="footer-nav">
-<a href="tools.html#ai-tools">Tools</a>
-<a href="submit-idea.html#share-ideas">Share Idea</a>
-</div>
-</div>
-<div class="footer-group">
-<div class="footer-col-label">Insights</div>
-<div class="footer-nav">
-<a href="insights.html#global-firms">Global Firms</a>
-</div>
-</div>
-<div class="footer-group">
-<div class="footer-col-label">Social</div>
-<div class="footer-nav">
-<a href="https://cpgvietnam.com.vn/" rel="noopener" target="_blank">CPG Vietnam</a>
-<a href="https://vn.linkedin.com/company/cpg-international-vietnam" rel="noopener" target="_blank">LinkedIn</a>
-<button class="back-to-top-text" id="backToTopBtn" type="button">Back to top ↑</button>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<div class="footer-copyright">© 2026 CPG International — CPG AI Hub, Vietnam Digital Transformation</div>
-</div>
+<footer class="footer">
+  <div class="footer-wrap footer-editorial">
+    <div class="footer-brand">
+      <img alt="CPG International" class="footer-logo" src="images/cpg-international.png"/>
+      <div><div class="footer-name">CPG AI <span class="c-gold">Hub</span></div><div class="footer-sub">CPG Vietnam Digital Transformation • Led by Soh Wee Keong</div></div>
+    </div>
+    <nav class="footer-columns" aria-label="Footer navigation">
+      <div class="footer-column"><span class="footer-column-title">GET STARTED</span><a href="learn.html#what-is-ai">AI Basics</a></div>
+      <div class="footer-column"><span class="footer-column-title">FIND TOOLS</span><a href="tools.html#task-help">Find by Task</a><a href="tools.html#ai-tools">Approved Tools</a></div>
+      <div class="footer-column"><span class="footer-column-title">NEWS</span><a href="insights.html#quick-learns">Articles &amp; Videos</a><a href="insights.html#global-firms">Global Firms</a></div>
+      <div class="footer-column"><span class="footer-column-title">SOCIAL</span><a href="https://cpgvietnam.com.vn/" rel="noopener" target="_blank">CPG Vietnam</a><a href="https://vn.linkedin.com/company/cpg-international-vietnam" rel="noopener" target="_blank">LinkedIn</a><button aria-label="Back to top" class="footer-text-top back-to-top" id="backToTopBtn" type="button">Back to top ↑</button></div>
+    </nav>
+    <div class="footer-bottom-row"><p class="footer-legal-address" data-no-translate>© Copyright 2026 CPG Vietnam Co., Ltd. All rights reserved. Level 11, Lottery Tower, 77 Trần Nhân Tôn, An Đông Ward, Ho Chi Minh City, Vietnam.</p></div>
+  </div>
 </footer>
 <!-- ── VERTICAL SCROLL INDICATOR (MAD Architects Style) ── -->
 <div class="scroll-progress-track" id="scrollProgressTrack" title="Scroll Position">
 <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 </div>
 <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
-<script src="js/app.js?v=7"></script>
+<script src="js/app.js?v=23"></script>
 </body>
 </html>
+

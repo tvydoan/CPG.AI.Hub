@@ -1882,7 +1882,7 @@ function initMicrosoft365Prototype() {
   </div>`;
   document.body.appendChild(modal);
 
-  const protectedSelector = '.need-pill, #home .btn-primary, #home .btn-ghost-lg, .nav-cta .btn-primary-sm, .nav-dd-trigger, .nav-dd-item, .footer-column a:not([target="_blank"])';
+  const protectedSelector = '.need-pill, #home .btn-primary, #home .btn-ghost-lg, .btn-primary-sm, .nav-dd-trigger, .nav-dd-item, .footer-column a:not([target="_blank"])';
   let pendingDestination = '';
   const isAuthenticated = () => sessionStorage.getItem('cpg-demo-auth') === '1';
 

@@ -6609,3 +6609,225 @@ textarea,
   .news-article-card { min-height: 220px; }
   .news-video-head { align-items: flex-start; flex-direction: column; }
 }
+/* ===== Unified liquid-glass controls — soft depth, no heavy drop shadows ===== */
+:root {
+  --cpg-glass-bg: linear-gradient(135deg, rgba(255,255,255,.92) 0%, rgba(249,250,252,.72) 48%, rgba(238,241,246,.54) 100%);
+  --cpg-glass-border: rgba(255,255,255,.88);
+  --cpg-glass-outline: rgba(20,27,40,.11);
+  --cpg-glass-shadow: inset 0 1px 0 rgba(255,255,255,.98), inset 0 -1px 0 rgba(255,255,255,.38), 0 5px 15px rgba(24,31,44,.055);
+  --cpg-glass-shadow-hover: inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(255,255,255,.48), 0 7px 18px rgba(24,31,44,.075);
+}
+
+body.premium-editorial .nav-link:not(.active),
+body.premium-editorial .language-toggle.lang-single-toggle,
+body.premium-editorial .m365-signin-btn:not(.is-authenticated),
+body.premium-editorial #home .hero-badge,
+body.premium-editorial #home .need-pill,
+body.premium-editorial #home .btn-ghost-lg,
+body.premium-editorial .vf-btn:not(.active),
+body.premium-editorial .filter-btn:not(.active),
+body.premium-editorial .quick-chip:not(.active),
+body.premium-editorial .need-software-btn:not(.active) {
+  background: var(--cpg-glass-bg) !important;
+  border: 1px solid var(--cpg-glass-border) !important;
+  outline: 1px solid var(--cpg-glass-outline);
+  outline-offset: -1px;
+  -webkit-backdrop-filter: blur(20px) saturate(145%);
+  backdrop-filter: blur(20px) saturate(145%);
+  box-shadow: var(--cpg-glass-shadow) !important;
+}
+
+body.premium-editorial .nav-link:not(.active):hover,
+body.premium-editorial .language-toggle.lang-single-toggle:hover,
+body.premium-editorial .m365-signin-btn:not(.is-authenticated):hover,
+body.premium-editorial #home .need-pill:hover,
+body.premium-editorial #home .need-pill:focus-visible,
+body.premium-editorial #home .btn-ghost-lg:hover,
+body.premium-editorial .vf-btn:not(.active):hover,
+body.premium-editorial .filter-btn:not(.active):hover,
+body.premium-editorial .quick-chip:not(.active):hover,
+body.premium-editorial .need-software-btn:not(.active):hover {
+  background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(242,245,249,.76)) !important;
+  box-shadow: var(--cpg-glass-shadow-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Red actions keep the CPG identity, with a glass highlight and shallow shadow. */
+body.premium-editorial .nav-link.active,
+body.premium-editorial .btn-primary,
+body.premium-editorial .btn-primary-sm,
+body.premium-editorial .btn-submit-full,
+body.premium-editorial .vf-btn.active,
+body.premium-editorial .filter-btn.active,
+body.premium-editorial .need-copy-btn {
+  background: linear-gradient(135deg, rgba(232,18,18,.96) 0%, rgba(196,0,0,.94) 62%, rgba(166,0,0,.92) 100%) !important;
+  border: 1px solid rgba(255,118,118,.42) !important;
+  outline: 1px solid rgba(126,0,0,.12);
+  outline-offset: -1px;
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.38), inset 0 -1px 0 rgba(84,0,0,.2), 0 6px 16px rgba(174,0,0,.13) !important;
+}
+
+body.premium-editorial .btn-primary:hover,
+body.premium-editorial .btn-primary-sm:hover,
+body.premium-editorial .btn-submit-full:hover,
+body.premium-editorial .vf-btn.active:hover,
+body.premium-editorial .filter-btn.active:hover,
+body.premium-editorial .need-copy-btn:hover {
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.46), inset 0 -1px 0 rgba(84,0,0,.18), 0 8px 19px rgba(174,0,0,.16) !important;
+  transform: translateY(-1px);
+}
+
+/* The badge is glass with only a red tint; remove the old floating halo. */
+body.premium-editorial #home .hero-badge {
+  background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(255,239,240,.64)) !important;
+  border-color: rgba(255,255,255,.9) !important;
+  outline-color: rgba(209,0,0,.18);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(255,255,255,.42), 0 5px 14px rgba(65,25,30,.06) !important;
+}
+
+/* Dropdowns use the same clear frosted material instead of a hard black panel. */
+body.premium-editorial .nav-dd-menu,
+body.premium-editorial .navbar.scrolled .nav-dd-menu {
+  background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(244,247,251,.7)) !important;
+  border: 1px solid rgba(255,255,255,.92) !important;
+  outline: 1px solid rgba(22,29,42,.1);
+  outline-offset: -1px;
+  -webkit-backdrop-filter: blur(26px) saturate(155%);
+  backdrop-filter: blur(26px) saturate(155%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(255,255,255,.36), 0 10px 26px rgba(20,27,40,.085) !important;
+}
+body.premium-editorial .nav-dd-item,
+body.premium-editorial .navbar.scrolled .nav-dd-item { color:#20242b !important; }
+body.premium-editorial .nav-dd-menu:hover .nav-dd-item,
+body.premium-editorial .navbar.scrolled .nav-dd-menu:hover .nav-dd-item { color:#8a9099 !important; }
+body.premium-editorial .nav-dd-menu .nav-dd-item:hover,
+body.premium-editorial .navbar.scrolled .nav-dd-menu .nav-dd-item:hover { color:#11151b !important; }
+
+/* Form text boxes share the glass surface without compromising contrast. */
+body.premium-editorial input:not([type="checkbox"]):not([type="radio"]),
+body.premium-editorial select,
+body.premium-editorial textarea {
+  background: linear-gradient(135deg, rgba(255,255,255,.9), rgba(247,249,252,.7)) !important;
+  border-color: rgba(28,35,47,.13) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(135%);
+  backdrop-filter: blur(16px) saturate(135%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.98), 0 4px 12px rgba(24,31,44,.04) !important;
+}
+body.premium-editorial input:not([type="checkbox"]):not([type="radio"]):focus,
+body.premium-editorial select:focus,
+body.premium-editorial textarea:focus {
+  border-color: rgba(209,0,0,.38) !important;
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 3px rgba(209,0,0,.075) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.premium-editorial .nav-link,
+  body.premium-editorial .btn-primary,
+  body.premium-editorial .btn-primary-sm,
+  body.premium-editorial .btn-ghost-lg,
+  body.premium-editorial .need-pill,
+  body.premium-editorial .vf-btn,
+  body.premium-editorial .filter-btn { transition:none !important; }
+}
+/* Home primary specificity fix: suppress the legacy deep red shadow. */
+body.premium-editorial #home .btn-primary {
+  background: linear-gradient(145deg, rgba(232,18,18,.96), rgba(190,0,0,.92)) !important;
+  border: 1px solid rgba(255,125,125,.4) !important;
+  outline: 1px solid rgba(126,0,0,.11);
+  outline-offset: -1px;
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.4), inset 0 -1px 0 rgba(84,0,0,.18), 0 6px 15px rgba(174,0,0,.13) !important;
+}
+body.premium-editorial #home .btn-primary:hover {
+  background: linear-gradient(145deg, rgba(240,24,24,.98), rgba(198,0,0,.94)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.48), inset 0 -1px 0 rgba(84,0,0,.16), 0 8px 18px rgba(174,0,0,.16) !important;
+  transform:translateY(-1px);
+}
+/* ===== Unified Home CTAs + MAD-style right-aligned desktop navigation ===== */
+body.premium-editorial #home .hero-btns {
+  display:flex;
+  align-items:stretch;
+  justify-content:flex-end;
+  gap:12px;
+}
+body.premium-editorial #home .hero-btns .btn-primary,
+body.premium-editorial #home .hero-btns .btn-ghost-lg {
+  min-height:54px;
+  padding:0 28px;
+  border-radius:12px !important;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1.2;
+}
+
+@media (min-width: 761px) {
+  body.premium-editorial .nav-wrap {
+    display:flex;
+    align-items:center;
+  }
+  body.premium-editorial .nav-links {
+    flex:0 0 auto;
+    margin-left:auto;
+    justify-content:flex-end;
+  }
+  body.premium-editorial .nav-cta {
+    flex:0 0 auto;
+    margin-left:8px;
+  }
+  body.premium-editorial .nav-link,
+  body.premium-editorial .btn-primary-sm,
+  body.premium-editorial .m365-signin-btn,
+  body.premium-editorial .language-toggle.lang-single-toggle {
+    min-height:38px;
+    border-radius:10px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body.premium-editorial #home .hero-btns {
+    width:min(100%, 286px);
+    flex-direction:column;
+    align-items:stretch;
+  }
+  body.premium-editorial #home .hero-btns .btn-primary,
+  body.premium-editorial #home .hero-btns .btn-ghost-lg {
+    width:100%;
+  }
+}
+/* Home action corner consistency: task choices and CTAs share one radius. */
+body.premium-editorial #home .need-pill,
+body.premium-editorial #home .hero-btns .btn-primary,
+body.premium-editorial #home .hero-btns .btn-ghost-lg {
+  border-radius:12px !important;
+}
+/* ===== Header active-state discipline: exactly one red destination ===== */
+body.premium-editorial .nav-submit-inline {
+  min-height:38px;
+  padding:0 16px;
+  border-radius:10px !important;
+  color:#20242b !important;
+  background:var(--cpg-glass-bg) !important;
+  border:1px solid var(--cpg-glass-border) !important;
+  outline:1px solid var(--cpg-glass-outline);
+  outline-offset:-1px;
+  -webkit-backdrop-filter:blur(20px) saturate(145%);
+  backdrop-filter:blur(20px) saturate(145%);
+  box-shadow:var(--cpg-glass-shadow) !important;
+}
+body.premium-editorial .nav-submit-inline:hover {
+  color:#111 !important;
+  background:linear-gradient(135deg,rgba(255,255,255,.98),rgba(242,245,249,.76)) !important;
+  box-shadow:var(--cpg-glass-shadow-hover) !important;
+  transform:translateY(-1px);
+}
+body.premium-editorial .nav-submit-inline.active {
+  color:#fff !important;
+  background:linear-gradient(135deg,rgba(232,18,18,.96),rgba(196,0,0,.94) 62%,rgba(166,0,0,.92)) !important;
+  border-color:rgba(255,118,118,.42) !important;
+  outline-color:rgba(126,0,0,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(84,0,0,.2),0 6px 16px rgba(174,0,0,.13) !important;
+}

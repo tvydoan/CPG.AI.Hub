@@ -6831,3 +6831,12 @@ body.premium-editorial .nav-submit-inline.active {
   outline-color:rgba(126,0,0,.12);
   box-shadow:inset 0 1px 0 rgba(255,255,255,.38),inset 0 -1px 0 rgba(84,0,0,.2),0 6px 16px rgba(174,0,0,.13) !important;
 }
+/* Editorial hero typography: semibold rather than heavy display bold. */
+body.premium-editorial #home .hero-h1,
+body.premium-editorial #home .hero-title-line {
+  font-weight:600 !important;
+}
+/* Submit Idea uses the same border treatment as the other inactive header controls. */
+body.premium-editorial .nav-submit-inline:not(.active) {
+  outline:none !important;
+}
